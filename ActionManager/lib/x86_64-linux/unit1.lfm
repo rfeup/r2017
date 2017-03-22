@@ -1,0 +1,1556 @@
+object Form1: TForm1
+  Left = 130
+  Height = 648
+  Top = 67
+  Width = 1155
+  Caption = 'Form1'
+  ClientHeight = 648
+  ClientWidth = 1155
+  OnCreate = FormCreate
+  OnShow = FormShow
+  LCLVersion = '1.2.6.0'
+  object Grid_rep: TChart
+    Left = 584
+    Height = 304
+    Top = 320
+    Width = 555
+    AxisList = <    
+      item
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+        Minors = <>
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+    object Grid_repSeries: TLineSeries
+      LinePen.Style = psClear
+      Pointer.Brush.Color = clYellow
+      ShowPoints = True
+    end
+    object Grid_repSeries1: TLineSeries
+      LinePen.Style = psClear
+      LineType = ltNone
+      Pointer.Brush.Color = clRed
+      ShowPoints = True
+    end
+    object Grid_repSeries2: TLineSeries
+      LinePen.Style = psClear
+      Pointer.Brush.Color = clGreen
+      ShowPoints = True
+    end
+  end
+  object Label8: TLabel
+    Left = 11
+    Height = 23
+    Top = 280
+    Width = 39
+    Caption = 'Map'
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 584
+    Height = 23
+    Top = 287
+    Width = 38
+    Caption = 'Grid'
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Connect: TButton
+    Left = 968
+    Height = 31
+    Top = 277
+    Width = 79
+    Caption = 'Connect'
+    OnClick = ConnectClick
+    TabOrder = 1
+  end
+  object Disconnect: TButton
+    Left = 1056
+    Height = 31
+    Top = 277
+    Width = 79
+    Caption = 'Disconnect'
+    OnClick = DisconnectClick
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 648
+    Height = 28
+    Top = 277
+    Width = 182
+    Caption = 'MultRobotMap'
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+  object PageControl1: TPageControl
+    Left = 8
+    Height = 256
+    Top = 8
+    Width = 1128
+    ActivePage = TabSheet1
+    TabIndex = 2
+    TabOrder = 4
+    object Start: TTabSheet
+      Caption = 'Start'
+      ClientHeight = 225
+      ClientWidth = 1124
+      object Label11: TLabel
+        Left = 15
+        Height = 17
+        Top = 61
+        Width = 81
+        Caption = 'Height_map'
+        ParentColor = False
+      end
+      object Width_map: TEdit
+        Left = 114
+        Height = 27
+        Top = 22
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 0
+        Text = '300'
+      end
+      object Height_map: TEdit
+        Left = 114
+        Height = 27
+        Top = 60
+        Width = 94
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 1
+        Text = '200'
+      end
+      object Label12: TLabel
+        Left = 15
+        Height = 17
+        Top = 116
+        Width = 63
+        Caption = 'Machines'
+        ParentColor = False
+      end
+      object Discen: TEdit
+        Left = 119
+        Height = 27
+        Top = 116
+        Width = 88
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 2
+        Text = '50'
+      end
+      object Width_obs: TEdit
+        Left = 234
+        Height = 27
+        Top = 118
+        Width = 94
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 3
+        Text = '24'
+      end
+      object Label15: TLabel
+        Left = 215
+        Height = 17
+        Top = 60
+        Width = 54
+        Caption = 'Robot R'
+        ParentColor = False
+      end
+      object Label16: TLabel
+        Left = 215
+        Height = 17
+        Top = 22
+        Width = 59
+        Caption = 'Size Grid'
+        ParentColor = False
+      end
+      object Size_grid: TEdit
+        Left = 274
+        Height = 27
+        Top = 22
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 4
+        Text = '2.5'
+      end
+      object Robot: TEdit
+        Left = 274
+        Height = 27
+        Top = 60
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 5
+        Text = '25'
+      end
+      object AssignVal: TButton
+        Left = 479
+        Height = 26
+        Top = 22
+        Width = 108
+        Caption = 'Assign Value'
+        OnClick = AssignValClick
+        TabOrder = 6
+      end
+      object Height_obs: TEdit
+        Left = 356
+        Height = 27
+        Top = 116
+        Width = 94
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 7
+        Text = '36'
+      end
+      object Label18: TLabel
+        Left = 15
+        Height = 17
+        Top = 22
+        Width = 78
+        Caption = 'Width_map'
+        ParentColor = False
+      end
+      object Draw_map: TButton
+        Left = 479
+        Height = 26
+        Top = 54
+        Width = 108
+        Caption = 'Draw map'
+        OnClick = Draw_mapClick
+        TabOrder = 8
+      end
+      object Label14: TLabel
+        Left = 234
+        Height = 17
+        Top = 94
+        Width = 73
+        Caption = 'Width_obs'
+        ParentColor = False
+        ParentShowHint = False
+      end
+      object Label17: TLabel
+        Left = 356
+        Height = 17
+        Top = 94
+        Width = 76
+        Caption = 'Height_obs'
+        ParentColor = False
+        ParentShowHint = False
+      end
+      object Label20: TLabel
+        Left = 119
+        Height = 17
+        Top = 94
+        Width = 75
+        Caption = 'Dist Center'
+        ParentColor = False
+        ParentShowHint = False
+      end
+      object IP_R1: TEdit
+        Left = 736
+        Height = 27
+        Top = 22
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 9
+        Text = '127.0.0.1'
+      end
+      object Port_R1: TEdit
+        Left = 847
+        Height = 27
+        Top = 21
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 10
+        Text = '9006'
+      end
+      object Label46: TLabel
+        Left = 680
+        Height = 17
+        Top = 27
+        Width = 53
+        Caption = 'Robot 1'
+        ParentColor = False
+      end
+      object Label48: TLabel
+        Left = 736
+        Height = 17
+        Top = 2
+        Width = 13
+        Caption = 'IP'
+        ParentColor = False
+      end
+      object Label49: TLabel
+        Left = 847
+        Height = 17
+        Top = 2
+        Width = 30
+        Caption = 'Port'
+        ParentColor = False
+      end
+      object Memo1: TMemo
+        Left = 851
+        Height = 68
+        Top = 144
+        Width = 90
+        Lines.Strings = (
+          'Debug buttons'
+        )
+        TabOrder = 11
+      end
+      object RealRobot: TCheckBox
+        Left = 952
+        Height = 24
+        Top = 24
+        Width = 100
+        Caption = 'Real Robot'
+        Checked = True
+        State = cbChecked
+        TabOrder = 12
+      end
+      object Label53: TLabel
+        Left = 952
+        Height = 17
+        Top = 48
+        Width = 146
+        Caption = 'Real Robot Port: 9006'
+        ParentColor = False
+      end
+      object Label54: TLabel
+        Left = 952
+        Height = 17
+        Top = 72
+        Width = 142
+        Caption = 'Sim Robot Port: 9810'
+        ParentColor = False
+      end
+      object Label47: TLabel
+        Left = 680
+        Height = 17
+        Top = 85
+        Width = 53
+        Caption = 'Robot 2'
+        ParentColor = False
+      end
+      object IP_R2: TEdit
+        Left = 741
+        Height = 27
+        Top = 80
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 13
+        Text = '127.0.0.1'
+      end
+      object Port_R2: TEdit
+        Left = 847
+        Height = 27
+        Top = 80
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 14
+        Text = '9811'
+      end
+      object RobNum: TEdit
+        Left = 741
+        Height = 27
+        Top = 118
+        Width = 96
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 15
+        Text = '0'
+      end
+      object Label50: TLabel
+        Left = 664
+        Height = 17
+        Top = 120
+        Width = 77
+        Caption = 'Num Robot'
+        ParentColor = False
+      end
+      object Label51: TLabel
+        Left = 701
+        Height = 17
+        Top = 152
+        Width = 26
+        Caption = 'R2X'
+        ParentColor = False
+      end
+      object Robot2X: TEdit
+        Left = 741
+        Height = 27
+        Top = 152
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 16
+        Text = '0'
+      end
+      object Robot2Y: TEdit
+        Left = 741
+        Height = 27
+        Top = 185
+        Width = 94
+        OnKeyPress = Width_mapKeyPress
+        TabOrder = 17
+        Text = '0'
+      end
+      object Label52: TLabel
+        Left = 701
+        Height = 17
+        Top = 185
+        Width = 26
+        Caption = 'R2Y'
+        ParentColor = False
+      end
+    end
+    object AstarTab: TTabSheet
+      Caption = 'Astar'
+      ClientHeight = 225
+      ClientWidth = 1124
+      object Label21: TLabel
+        Left = 119
+        Height = 17
+        Top = 14
+        Width = 9
+        Caption = 'X'
+        ParentColor = False
+        ParentShowHint = False
+      end
+      object Label22: TLabel
+        Left = 175
+        Height = 17
+        Top = 14
+        Width = 9
+        Caption = 'Y'
+        ParentColor = False
+        ParentShowHint = False
+      end
+      object y_ini: TEdit
+        Left = 160
+        Height = 27
+        Top = 36
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 0
+        Text = '50'
+      end
+      object y_goal: TEdit
+        Left = 161
+        Height = 27
+        Top = 76
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 1
+        Text = '-50'
+      end
+      object x_goal: TEdit
+        Left = 105
+        Height = 27
+        Top = 76
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 2
+        Text = '113'
+      end
+      object x_ini: TEdit
+        Left = 105
+        Height = 27
+        Top = 36
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 3
+        Text = '-113'
+      end
+      object Label23: TLabel
+        Left = 7
+        Height = 17
+        Top = 36
+        Width = 93
+        Caption = 'Starting Point'
+        ParentColor = False
+      end
+      object Label24: TLabel
+        Left = 62
+        Height = 17
+        Top = 76
+        Width = 31
+        Caption = 'Goal'
+        ParentColor = False
+      end
+      object D: TFloatSpinEdit
+        Left = 105
+        Height = 27
+        Top = 110
+        Width = 58
+        Increment = 0.1
+        MaxValue = 10
+        MinValue = 0
+        TabOrder = 4
+        Value = 0
+      end
+      object Label25: TLabel
+        Left = 55
+        Height = 17
+        Top = 110
+        Width = 43
+        Caption = 'D Gain'
+        ParentColor = False
+      end
+      object Calculate: TButton
+        Left = 105
+        Height = 26
+        Top = 158
+        Width = 95
+        Caption = 'Calculate'
+        OnClick = CalculateClick
+        TabOrder = 5
+      end
+      object MemoAstar: TMemo
+        Left = 286
+        Height = 178
+        Top = 12
+        Width = 297
+        Lines.Strings = (
+          'MemoAstar'
+        )
+        ScrollBars = ssAutoVertical
+        TabOrder = 6
+      end
+      object V_debug: TEdit
+        Left = 698
+        Height = 27
+        Top = 19
+        Width = 75
+        ReadOnly = True
+        TabOrder = 7
+      end
+      object Vn_debug: TEdit
+        Left = 816
+        Height = 27
+        Top = 19
+        Width = 77
+        ReadOnly = True
+        TabOrder = 8
+      end
+      object W_debug: TEdit
+        Left = 931
+        Height = 27
+        Top = 19
+        Width = 77
+        ReadOnly = True
+        TabOrder = 9
+      end
+      object Label55: TLabel
+        Left = 680
+        Height = 17
+        Top = 24
+        Width = 10
+        Caption = 'V'
+        ParentColor = False
+      end
+      object Label56: TLabel
+        Left = 792
+        Height = 17
+        Top = 24
+        Width = 18
+        Caption = 'Vn'
+        ParentColor = False
+      end
+      object Label57: TLabel
+        Left = 912
+        Height = 17
+        Top = 24
+        Width = 14
+        Caption = 'W'
+        ParentColor = False
+      end
+      object Label58: TLabel
+        Left = 680
+        Height = 17
+        Top = 61
+        Width = 9
+        Caption = 'X'
+        ParentColor = False
+      end
+      object X_debug: TEdit
+        Left = 698
+        Height = 27
+        Top = 56
+        Width = 75
+        ReadOnly = True
+        TabOrder = 10
+      end
+      object Label59: TLabel
+        Left = 792
+        Height = 17
+        Top = 61
+        Width = 9
+        Caption = 'Y'
+        ParentColor = False
+      end
+      object Y_debug: TEdit
+        Left = 816
+        Height = 27
+        Top = 56
+        Width = 77
+        ReadOnly = True
+        TabOrder = 11
+      end
+      object Label60: TLabel
+        Left = 912
+        Height = 17
+        Top = 61
+        Width = 16
+        Caption = 'Th'
+        ParentColor = False
+      end
+      object TH_debug: TEdit
+        Left = 931
+        Height = 27
+        Top = 56
+        Width = 77
+        ReadOnly = True
+        TabOrder = 12
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'Machines'
+      ClientHeight = 225
+      ClientWidth = 1124
+      object Label1: TLabel
+        Left = 12
+        Height = 17
+        Top = 38
+        Width = 67
+        Caption = 'Machine 1'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 12
+        Height = 17
+        Top = 68
+        Width = 67
+        Caption = 'Machine 2'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 12
+        Height = 17
+        Top = 96
+        Width = 67
+        Caption = 'Machine 3'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 12
+        Height = 17
+        Top = 125
+        Width = 67
+        Caption = 'Machine 4'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 12
+        Height = 17
+        Top = 155
+        Width = 67
+        Caption = 'Machine 5'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 12
+        Height = 17
+        Top = 184
+        Width = 67
+        Caption = 'Machine 6'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 344
+        Height = 17
+        Top = 38
+        Width = 67
+        Caption = 'Machine 7'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 344
+        Height = 17
+        Top = 68
+        Width = 67
+        Caption = 'Machine 8'
+        ParentColor = False
+      end
+      object Label13: TLabel
+        Left = 344
+        Height = 17
+        Top = 96
+        Width = 67
+        Caption = 'Machine 9'
+        ParentColor = False
+      end
+      object Label19: TLabel
+        Left = 344
+        Height = 17
+        Top = 125
+        Width = 75
+        Caption = 'Machine 10'
+        ParentColor = False
+      end
+      object Label26: TLabel
+        Left = 344
+        Height = 17
+        Top = 155
+        Width = 75
+        Caption = 'Machine 11'
+        ParentColor = False
+      end
+      object Label27: TLabel
+        Left = 344
+        Height = 17
+        Top = 184
+        Width = 75
+        Caption = 'Machine 12'
+        ParentColor = False
+      end
+      object Label28: TLabel
+        Left = 696
+        Height = 17
+        Top = 38
+        Width = 75
+        Caption = 'Machine 13'
+        ParentColor = False
+      end
+      object Label29: TLabel
+        Left = 696
+        Height = 17
+        Top = 68
+        Width = 75
+        Caption = 'Machine 14'
+        ParentColor = False
+      end
+      object Label30: TLabel
+        Left = 696
+        Height = 17
+        Top = 96
+        Width = 75
+        Caption = 'Machine 15'
+        ParentColor = False
+      end
+      object Label31: TLabel
+        Left = 696
+        Height = 17
+        Top = 125
+        Width = 75
+        Caption = 'Machine 16'
+        ParentColor = False
+      end
+      object Label32: TLabel
+        Left = 696
+        Height = 17
+        Top = 184
+        Width = 75
+        Caption = 'Machine 18'
+        ParentColor = False
+      end
+      object Label33: TLabel
+        Left = 696
+        Height = 17
+        Top = 155
+        Width = 75
+        Caption = 'Machine 17'
+        ParentColor = False
+      end
+      object X_A_M1: TEdit
+        Left = 88
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 0
+        Text = '-113'
+      end
+      object Y_A_M1: TEdit
+        Left = 144
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 1
+        Text = '53'
+      end
+      object X_M1: TEdit
+        Left = 200
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 2
+        Text = '-113'
+      end
+      object Y_M1: TEdit
+        Left = 256
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 3
+        Text = '78'
+      end
+      object X_A_M2: TEdit
+        Left = 88
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 4
+        Text = '-95'
+      end
+      object Y_A_M2: TEdit
+        Left = 144
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 5
+        Text = '53'
+      end
+      object X_M2: TEdit
+        Left = 200
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 6
+        Text = '-95'
+      end
+      object Y_M2: TEdit
+        Left = 256
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 7
+        Text = '78'
+      end
+      object X_A_M3: TEdit
+        Left = 88
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 8
+        Text = '-77'
+      end
+      object Y_A_M3: TEdit
+        Left = 144
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 9
+        Text = '53'
+      end
+      object X_M3: TEdit
+        Left = 200
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 10
+        Text = '-77'
+      end
+      object Y_M3: TEdit
+        Left = 256
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 11
+        Text = '78'
+      end
+      object X_A_M4: TEdit
+        Left = 88
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 12
+        Text = '-59'
+      end
+      object Y_A_M4: TEdit
+        Left = 144
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 13
+        Text = '53'
+      end
+      object X_M4: TEdit
+        Left = 200
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 14
+        Text = '-59'
+      end
+      object Y_M4: TEdit
+        Left = 256
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 15
+        Text = '78'
+      end
+      object X_A_M5: TEdit
+        Left = 88
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 16
+        Text = '-41'
+      end
+      object Y_A_M5: TEdit
+        Left = 144
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 17
+        Text = '53'
+      end
+      object X_M5: TEdit
+        Left = 200
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 18
+        Text = '-41'
+      end
+      object Y_M5: TEdit
+        Left = 256
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 19
+        Text = '78'
+      end
+      object X_A_M6: TEdit
+        Left = 88
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 20
+        Text = '-116'
+      end
+      object Y_A_M6: TEdit
+        Left = 144
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 21
+        Text = '10'
+      end
+      object X_M6: TEdit
+        Left = 200
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 22
+        Text = '-91'
+      end
+      object Y_M6: TEdit
+        Left = 256
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 23
+        Text = '10'
+      end
+      object X_A_M7: TEdit
+        Left = 424
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 24
+        Text = '-116'
+      end
+      object Y_A_M7: TEdit
+        Left = 480
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 25
+        Text = '-10'
+      end
+      object X_M7: TEdit
+        Left = 536
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 26
+        Text = '-91'
+      end
+      object Y_M7: TEdit
+        Left = 592
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 27
+        Text = '-10'
+      end
+      object Y_M8: TEdit
+        Left = 592
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 28
+        Text = '10'
+      end
+      object X_M8: TEdit
+        Left = 536
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 29
+        Text = '-34'
+      end
+      object Y_A_M8: TEdit
+        Left = 480
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 30
+        Text = '10'
+      end
+      object X_A_M8: TEdit
+        Left = 424
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 31
+        Text = '-9'
+      end
+      object X_A_M9: TEdit
+        Left = 424
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 32
+        Text = '-9'
+      end
+      object Y_A_M9: TEdit
+        Left = 480
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 33
+        Text = '-10'
+      end
+      object X_A_M10: TEdit
+        Left = 424
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 34
+        Text = '9'
+      end
+      object X_A_M11: TEdit
+        Left = 424
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 35
+        Text = '9'
+      end
+      object X_A_M12: TEdit
+        Left = 424
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 36
+        Text = '116'
+      end
+      object Y_A_M12: TEdit
+        Left = 480
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 37
+        Text = '10'
+      end
+      object Y_A_M11: TEdit
+        Left = 480
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 38
+        Text = '-10'
+      end
+      object Y_A_M10: TEdit
+        Left = 480
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 39
+        Text = '10'
+      end
+      object X_M10: TEdit
+        Left = 536
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 40
+        Text = '34'
+      end
+      object X_M11: TEdit
+        Left = 536
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 41
+        Text = '34'
+      end
+      object X_M9: TEdit
+        Left = 536
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 42
+        Text = '-34'
+      end
+      object Y_M9: TEdit
+        Left = 592
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 43
+        Text = '-10'
+      end
+      object Y_M10: TEdit
+        Left = 592
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 44
+        Text = '10'
+      end
+      object Y_M11: TEdit
+        Left = 592
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 45
+        Text = '-10'
+      end
+      object Y_M12: TEdit
+        Left = 592
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 46
+        Text = '10'
+      end
+      object X_M12: TEdit
+        Left = 536
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 47
+        Text = '91'
+      end
+      object X_A_M13: TEdit
+        Left = 776
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 48
+        Text = '116'
+      end
+      object Y_A_M13: TEdit
+        Left = 832
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 49
+        Text = '-10'
+      end
+      object X_M13: TEdit
+        Left = 888
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 50
+        Text = '91'
+      end
+      object Y_M13: TEdit
+        Left = 944
+        Height = 27
+        Top = 32
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 51
+        Text = '-10'
+      end
+      object Y_M14: TEdit
+        Left = 944
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 52
+        Text = '-78'
+      end
+      object X_M14: TEdit
+        Left = 888
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 53
+        Text = '41'
+      end
+      object Y_A_M14: TEdit
+        Left = 832
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 54
+        Text = '-53'
+      end
+      object X_A_M14: TEdit
+        Left = 776
+        Height = 27
+        Top = 62
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 55
+        Text = '41'
+      end
+      object X_A_M15: TEdit
+        Left = 776
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 56
+        Text = '59'
+      end
+      object Y_A_M15: TEdit
+        Left = 832
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 57
+        Text = '-53'
+      end
+      object X_A_M16: TEdit
+        Left = 776
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 58
+        Text = '77'
+      end
+      object X_A_M17: TEdit
+        Left = 776
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 59
+        Text = '95'
+      end
+      object X_A_M18: TEdit
+        Left = 776
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 60
+        Text = '113'
+      end
+      object Y_A_M18: TEdit
+        Left = 832
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 61
+        Text = '-53'
+      end
+      object Y_A_M17: TEdit
+        Left = 832
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 62
+        Text = '-53'
+      end
+      object Y_A_M16: TEdit
+        Left = 832
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 63
+        Text = '-53'
+      end
+      object X_M16: TEdit
+        Left = 888
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 64
+        Text = '77'
+      end
+      object X_M17: TEdit
+        Left = 888
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 65
+        Text = '95'
+      end
+      object X_M15: TEdit
+        Left = 888
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 66
+        Text = '59'
+      end
+      object Y_M15: TEdit
+        Left = 944
+        Height = 27
+        Top = 91
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 67
+        Text = '-78'
+      end
+      object Y_M16: TEdit
+        Left = 944
+        Height = 27
+        Top = 121
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 68
+        Text = '-78'
+      end
+      object Y_M17: TEdit
+        Left = 944
+        Height = 27
+        Top = 151
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 69
+        Text = '-78'
+      end
+      object Y_M18: TEdit
+        Left = 944
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 70
+        Text = '-78'
+      end
+      object X_M18: TEdit
+        Left = 888
+        Height = 27
+        Top = 181
+        Width = 39
+        OnKeyPress = Height_mapKeyPress
+        TabOrder = 71
+        Text = '113'
+      end
+      object Label34: TLabel
+        Left = 88
+        Height = 17
+        Top = 8
+        Width = 32
+        Caption = 'X_A*'
+        ParentColor = False
+      end
+      object Label35: TLabel
+        Left = 144
+        Height = 17
+        Top = 8
+        Width = 32
+        Caption = 'Y_A*'
+        ParentColor = False
+      end
+      object Label36: TLabel
+        Left = 200
+        Height = 17
+        Top = 8
+        Width = 52
+        Caption = 'X_Mach'
+        ParentColor = False
+      end
+      object Label37: TLabel
+        Left = 256
+        Height = 17
+        Top = 8
+        Width = 52
+        Caption = 'Y_Mach'
+        ParentColor = False
+      end
+      object Label38: TLabel
+        Left = 536
+        Height = 17
+        Top = 8
+        Width = 52
+        Caption = 'X_Mach'
+        ParentColor = False
+      end
+      object Label39: TLabel
+        Left = 424
+        Height = 17
+        Top = 8
+        Width = 32
+        Caption = 'X_A*'
+        ParentColor = False
+      end
+      object Label40: TLabel
+        Left = 480
+        Height = 17
+        Top = 8
+        Width = 32
+        Caption = 'Y_A*'
+        ParentColor = False
+      end
+      object Label41: TLabel
+        Left = 592
+        Height = 17
+        Top = 8
+        Width = 52
+        Caption = 'Y_Mach'
+        ParentColor = False
+      end
+      object Label42: TLabel
+        Left = 888
+        Height = 17
+        Top = 8
+        Width = 52
+        Caption = 'X_Mach'
+        ParentColor = False
+      end
+      object Label43: TLabel
+        Left = 776
+        Height = 17
+        Top = 8
+        Width = 32
+        Caption = 'X_A*'
+        ParentColor = False
+      end
+      object Label44: TLabel
+        Left = 832
+        Height = 17
+        Top = 8
+        Width = 32
+        Caption = 'Y_A*'
+        ParentColor = False
+      end
+      object Label45: TLabel
+        Left = 944
+        Height = 17
+        Top = 8
+        Width = 52
+        Caption = 'Y_Mach'
+        ParentColor = False
+      end
+      object DefMach: TButton
+        Left = 992
+        Height = 34
+        Top = 168
+        Width = 120
+        Caption = 'Def. Machines'
+        OnClick = DefMachClick
+        TabOrder = 72
+      end
+    end
+  end
+  object SimTwoUDP: TLUDPComponent
+    Port = 0
+    OnReceive = SimTwoUDPReceive
+    OnError = SimTwoUDPError
+    Timeout = 0
+    left = 59
+    top = 280
+  end
+  object SimTwoUDPR2: TLUDPComponent
+    Port = 0
+    OnReceive = SimTwoUDPR2Receive
+    Timeout = 0
+    left = 144
+    top = 280
+  end
+  object UDPRob: TLUDPComponent
+    Port = 0
+    OnReceive = UDPRobReceive
+    Timeout = 0
+    left = 240
+    top = 280
+  end
+  object UDPTask: TLUDPComponent
+    Port = 9022
+    OnReceive = UDPTaskReceive
+    Timeout = 0
+    left = 312
+    top = 280
+  end
+end

@@ -1,0 +1,85 @@
+unit LaserListen;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  lNetComponents, lNet, TAGraph, TASeries, Rlan;
+
+type
+
+  { TFLaserListen }
+
+  TFLaserListen = class(TForm)
+    UDP: TLUDPComponent;
+    Memo: TMemo;
+    Chart: TChart;
+    CSLaser: TLineSeries;
+    procedure FormShow(Sender: TObject);
+    procedure UDPReceive(aSocket: TLSocket);
+  private
+    { private declarations }
+  public
+    NetInBuf: TUDPBuffer;
+  end; 
+
+var
+  FLaserListen: TFLaserListen;
+
+implementation
+
+{ TFLaserListen }
+
+procedure TFLaserListen.FormShow(Sender: TObject);
+begin
+  //UDP.Connect('127.0.0.1',9876)
+  UDP.Listen(9876);
+end;
+
+procedure TFLaserListen.UDPReceive(aSocket: TLSocket);
+var data: string;
+    NumberBytes: integer;
+    id: char;
+    i, d: integer;
+begin
+  Memo.Clear;
+
+
+  UDP.GetMessage(data);
+
+  //zeromemory(@(NetInBuf.data[0]), UDPBufSize);
+  ClearUDPBuffer(NetInBuf);
+  NumberBytes := length(data);
+
+  if NumberBytes >= UDPBufSize then
+    exit;
+
+  NetInBuf.MessSize := NumberBytes;
+  NetInBuf.ReadDisp := 0;
+  //copymemory(@(NetInBuf.data[0]), @(data[1]), NumberBytes);
+  move(data[1], NetInBuf.data[0], NumberBytes);
+
+
+  // we only expect packets from Hokuyo
+  if chr(NetGetByte(NetInBuf)) <> 'H' then
+    exit;
+  if chr(NetGetByte(NetInBuf)) <> 'A' then
+    exit;
+  if chr(NetGetByte(NetInBuf)) <> '1' then
+    exit;
+
+  CSLaser.Clear;
+  for i := 44 to 725 do begin
+    d := netgetword(NetInBuf);
+    CSLaser.AddXY(i, d);
+    //Memo.Lines.add(inttostr(d));
+  end;
+end;
+
+initialization
+  {$I LaserListen.lrs}
+
+end.
+

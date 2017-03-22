@@ -1,0 +1,40 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFMain','FORMDATA',[
+  'TPF0'#6'TFMain'#5'FMain'#4'Left'#3#233#1#6'Height'#3#11#2#3'Top'#3#192#0#5'W'
+  +'idth'#3'g'#1#18'HorzScrollBar.Page'#3#5#1#18'VertScrollBar.Page'#2' '#13'Ac'
+  +'tiveControl'#7#13'CBVideoActive'#7'Caption'#6#12'SdpoVideo4L2'#12'ClientHei'
+  +'ght'#3#11#2#11'ClientWidth'#3'g'#1#7'OnClose'#7#9'FormClose'#8'OnCreate'#7
+  +#10'FormCreate'#9'OnDestroy'#7#11'FormDestroy'#17'SessionProperties'#6'0Edit'
+  +'Device.Text;EditLine.Text;EditLineCount.Text'#10'LCLVersion'#6#7'1.2.6.0'#0
+  +#9'TCheckBox'#13'CBVideoActive'#4'Left'#2#4#6'Height'#2#21#3'Top'#2#4#5'Widt'
+  +'h'#2'_'#7'Caption'#6#12'Video Active'#8'OnChange'#7#19'CBVideoActiveChange'
+  +#8'TabOrder'#2#0#0#0#5'TEdit'#10'EditDevice'#4'Left'#2'v'#6'Height'#2#27#3'T'
+  +'op'#2#4#5'Width'#3#140#0#8'AutoSize'#8#10'AutoSelect'#8#8'TabOrder'#2#1#4'T'
+  +'ext'#6#11'/dev/video0'#0#0#5'TMemo'#4'Memo'#4'Left'#2#0#6'Height'#3#224#0#3
+  +'Top'#2'@'#5'Width'#3'i'#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#8'T'
+  +'abOrder'#2#2#0#0#10'TStatusBar'#9'StatusBar'#4'Left'#2#0#6'Height'#2#21#3'T'
+  +'op'#3#246#1#5'Width'#3'g'#1#6'Panels'#14#0#0#0#6'TChart'#6'Chart1'#4'Left'#2
+  +#4#6'Height'#3#200#0#3'Top'#3'('#1#5'Width'#3'`'#1#8'AxisList'#14#1#6'Minors'
+  +#14#0#9'Range.Max'#5#0#0#0#0#0#0#0#250#7'@'#12'Range.UseMax'#9#12'Range.UseM'
+  +'in'#9#27'Title.LabelFont.Orientation'#3#132#3#0#1#9'Alignment'#7#9'calBotto'
+  +'m'#6'Minors'#14#0#0#0#16'Foot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Colo'
+  +'r'#7#6'clBlue'#17'Title.Brush.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6
+  +'clBlue'#18'Title.Text.Strings'#1#6#7'TAChart'#0#11'ParentColor'#8#0#11'TLin'
+  +'eSeries'#13'LineSeriesRED'#13'LinePen.Color'#7#5'clRed'#0#0#11'TLineSeries'
+  +#14'LineSeriesBlue'#13'LinePen.Color'#7#6'clBlue'#0#0#11'TLineSeries'#15'Lin'
+  +'eSeriesGreen'#13'LinePen.Color'#7#7'clGreen'#0#0#0#5'TEdit'#8'EditLine'#4'L'
+  +'eft'#2'v'#6'Height'#2#27#3'Top'#2' '#5'Width'#2'2'#8'TabOrder'#2#5#4'Text'#6
+  +#3'100'#0#0#5'TEdit'#5'Edit1'#4'Left'#3#232#0#6'Height'#2#27#3'Top'#2' '#5'W'
+  +'idth'#2'p'#8'TabOrder'#2#6#4'Text'#6#7'EditRGB'#0#0#5'TEdit'#13'EditLineCou'
+  +'nt'#4'Left'#3#168#0#6'Height'#2#27#3'Top'#2' '#5'Width'#2'2'#8'TabOrder'#2#7
+  +#4'Text'#6#1'8'#0#0#13'TSdpoVideo4L2'#5'Video'#6'Active'#8#5'Width'#3'@'#1#6
+  +'Height'#3#240#0#9'FrameRate'#2#30#9'BayerMode'#8#11'PixelFormat'#7#11'uvcpf'
+  +'_BGR24'#9'UseLibV4l'#9#7'OnFrame'#7#10'VideoFrame'#4'left'#2#8#3'top'#2' '#0
+  +#0#13'TSdpoFastForm'#5'Image'#5'Width'#3'@'#1#6'Height'#3#240#0#6'TopPos'#2#0
+  +#7'LeftPos'#2#0#8'Position'#7#6'poNone'#7'Caption'#6#5'Image'#9'ImageType'#7
+  +#8'itNormal'#11'AlwaysOnTop'#8#4'left'#3#224#0#3'top'#2' '#0#0#15'TIniPropSt'
+  +'orage'#14'IniPropStorage'#12'StoredValues'#14#0#10'IniSection'#6#4'Main'#4
+  +'left'#3#8#1#3'top'#2' '#0#0#14'TLUDPComponent'#6'UDPRob'#4'Port'#3'=#'#7'Ti'
+  +'meout'#2#0#4'left'#2'0'#3'top'#2' '#0#0#0
+]);

@@ -1,0 +1,8 @@
+/home/joana/Área de Trabalho/factory/ConnectLaser/laser 
+Heap dump by heaptrc unit
+136984577 memory blocks allocated : 4268019862/753975856
+136984577 memory blocks freed     : 4268019862/753975856
+0 unfreed memory blocks : 0
+True heap size : 950272
+True free heap : 949008
+Should be : 950272

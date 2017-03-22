@@ -1,0 +1,8 @@
+/home/dpo/Desktop/R@F_2016_v4/ConnectLaser/laser 
+Heap dump by heaptrc unit
+30439 memory blocks allocated : 2486566/2604504
+30439 memory blocks freed     : 2486566/2604504
+0 unfreed memory blocks : 0
+True heap size : 884736
+True free heap : 883472
+Should be : 884736

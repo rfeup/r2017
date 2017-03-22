@@ -1,0 +1,8 @@
+Mission 1:
+    B | B | B | B | B
+
+Mission 2:
+    B | X | X | X | G - 2 B's e 1 G
+
+Mission 3:
+    B | X | X | X | X - 1 B, 2 G's, 1 R

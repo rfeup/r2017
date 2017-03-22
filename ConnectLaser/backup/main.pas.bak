@@ -1,0 +1,154 @@
+unit main;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, ExtCtrls, ComCtrls, SdpoSerial, TAGraph, TASeries;
+
+type
+
+  { TFMain }
+
+  TFMain = class(TForm)
+    BLaserOn: TButton;
+    BScan: TButton;
+    Chart1: TChart;
+    CBTimer: TCheckBox;
+    CSLaserData: TLineSeries;
+    Memo: TMemo;
+    PageControl: TPageControl;
+    PaintBox: TPaintBox;
+    Serial: TSdpoSerial;
+    TabChart: TTabSheet;
+    TabRadial: TTabSheet;
+    Timer: TTimer;
+    procedure BLaserOnClick(Sender: TObject);
+    procedure BScanClick(Sender: TObject);
+    procedure CBTimerChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure PageControlChange(Sender: TObject);
+    procedure SerialRxData(Sender: TObject);
+    procedure TimerTimer(Sender: TObject);
+  private
+    procedure processLaserMessage(str: string);
+    { private declarations }
+  public
+    SerialData: string;
+  end; 
+
+var
+  FMain: TFMain;
+
+implementation
+
+{ TFMain }
+
+procedure TFMain.FormCreate(Sender: TObject);
+begin
+  SerialData := '';
+end;
+
+procedure TFMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  Serial.Close;
+end;
+
+procedure TFMain.BLaserOnClick(Sender: TObject);
+begin
+  Serial.WriteData('L1' + #$0A);
+end;
+
+procedure TFMain.BScanClick(Sender: TObject);
+begin
+  Serial.WriteData('G00076801' + #$0A);
+end;
+
+procedure TFMain.CBTimerChange(Sender: TObject);
+begin
+  Timer.Enabled := CBTimer.Checked;
+end;
+
+procedure TFMain.FormShow(Sender: TObject);
+begin
+  Serial.Open;
+end;
+
+procedure TFMain.PageControlChange(Sender: TObject);
+begin
+
+end;
+
+procedure TFMain.SerialRxData(Sender: TObject);
+var s: string;
+    i, idx: integer;
+begin
+ SerialData := SerialData + serial.ReadData;
+  idx := 0;
+  for i := 1  to Length(SerialData) - 1 do begin
+    if (SerialData[i] = chr($0A)) and (SerialData[i+1] = chr($0A)) then begin
+      idx := i;
+      break;
+    end;
+  end;
+
+  if idx > 0 then begin
+    s := Copy(SerialData, 1, idx);
+    SerialData := Copy(SerialData, idx + 2,  maxint);
+    processLaserMessage(s);
+    //memo.Append(s);
+  end;
+
+end;
+
+procedure TFMain.TimerTimer(Sender: TObject);
+begin
+  BScan.Click;
+end;
+
+
+procedure TFMain.processLaserMessage(str: string);
+var slist: TStringList;
+    s: string;
+    i, d, v, x: integer;
+    ang, teta: double;
+    xc, yc: double;
+begin
+  slist := TStringList.Create;
+  try
+    Slist.Text := str;
+    //memo.Clear;
+    //memo.Lines.AddStrings(slist);
+    CSLaserData.Clear;
+
+    xc := PaintBox.Width / 2;
+    yc := PaintBox.Height / 2;
+    PaintBox.Canvas.Clear;
+
+    x := 0;
+    for i := 2 to slist.Count - 1 do begin
+      s := slist[i];
+      for d := 1 to Length(s) div 2 do begin
+        v := (ord(s[2*d-1]) - $30) * 64 + (ord(s[2*d]) - $30);
+        ang := 270* x / (3*256) - 135;
+        teta := ang / 180 * pi;
+        inc(x);
+        CSLaserData.AddXY(ang, v);
+        PaintBox.Canvas.LineTo(round(xc + cos(teta) * v/20), round(yc - sin(teta) * v/20));
+      end;
+    end;
+    //memo.Lines.Add('X := ' + inttostr(x));
+  finally
+    Slist.Free;
+  end;
+end;
+
+initialization
+  {$I main.lrs}
+
+end.
+

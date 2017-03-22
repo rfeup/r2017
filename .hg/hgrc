@@ -1,0 +1,6 @@
+[paths]
+default = https://bitbucket.org/dancampos/robot-factory
+
+
+[web]
+name = robot_factory

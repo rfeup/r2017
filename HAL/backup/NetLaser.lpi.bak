@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <PathDelim Value="\"/>
+    <Version Value="7"/>
+    <General>
+      <MainUnit Value="0"/>
+      <TargetFileExt Value=".exe"/>
+      <Icon Value="0"/>
+      <UseXPManifest Value="True"/>
+      <ActiveEditorIndexAtStart Value="1"/>
+    </General>
+    <VersionInfo>
+      <ProjectVersion Value=""/>
+      <Language Value=""/>
+      <CharSet Value=""/>
+    </VersionInfo>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="3">
+      <Item1>
+        <PackageName Value="TAChartLazarusPkg"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="lnetvisual"/>
+        <MinVersion Minor="6" Release="2" Valid="True"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+    </RequiredPackages>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="NetLaser.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NetLaser"/>
+        <CursorPos X="21" Y="12"/>
+        <TopLine Value="1"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="LaserListen.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FLaserListen"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LaserListen"/>
+        <CursorPos X="15" Y="70"/>
+        <TopLine Value="39"/>
+        <EditorIndex Value="0"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="rlan.pas"/>
+        <UnitName Value="RLan"/>
+        <CursorPos X="37" Y="28"/>
+        <TopLine Value="1"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="12" HistoryIndex="11">
+      <Position1>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="24" Column="18" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="28" Column="18" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="37" Column="18" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="34" Column="29" TopLine="1"/>
+      </Position4>
+      <Position5>
+        <Filename Value="rlan.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="rlan.pas"/>
+        <Caret Line="52" Column="1" TopLine="30"/>
+      </Position6>
+      <Position7>
+        <Filename Value="rlan.pas"/>
+        <Caret Line="117" Column="3" TopLine="94"/>
+      </Position7>
+      <Position8>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="32" Column="29" TopLine="1"/>
+      </Position8>
+      <Position9>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="35" Column="31" TopLine="13"/>
+      </Position9>
+      <Position10>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="68" Column="1" TopLine="33"/>
+      </Position10>
+      <Position11>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="59" Column="25" TopLine="39"/>
+      </Position11>
+      <Position12>
+        <Filename Value="LaserListen.pas"/>
+        <Caret Line="60" Column="25" TopLine="39"/>
+      </Position12>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="8"/>
+    <PathDelim Value="\"/>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)\"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,992 @@
+object FMain: TFMain
+  Left = 850
+  Height = 524
+  Top = 101
+  Width = 451
+  Caption = 'Main'
+  ClientHeight = 524
+  ClientWidth = 451
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  SessionProperties = 'CBChartCurrentActive.Checked;CBChartSpeedActive.Checked;CBContinous.Checked;CBExcel.Checked;CBPID.Checked;CBRawDebug.Checked;CBSyncPWM.Checked;CBXY.Checked;EditChannel.Text;EditComPort.Text;EditIP.Text;EditJoyDevice.Text;EditKd.Text;EditKf.Text;EditKi.Text;EditKp.Text;EditM1Decimate.Text;EditRawData.Text;EditServoLeftLock.Text;EditServoLeftLow.Text;EditServoLeftUp.Text;EditServoRightLock.Text;EditServoRightLow.Text;EditServoRightUp.Text;EditTicksToRads.Text;EditUDPListenPort.Text;EditUDPSend.Text;Height;Left;PageControl.ActivePage;RGServosPosition.ItemIndex;Top;Width;CBRemoteSpeeds.Checked'
+  LCLVersion = '1.2.6.0'
+  object Label1: TLabel
+    Left = 4
+    Height = 17
+    Top = 12
+    Width = 70
+    Caption = 'COM Port:'
+    ParentColor = False
+  end
+  object EditComPort: TEdit
+    Left = 80
+    Height = 27
+    Top = 8
+    Width = 96
+    TabOrder = 0
+    Text = 'COM9'
+  end
+  object BOpenComPort: TButton
+    Left = 184
+    Height = 25
+    Top = 8
+    Width = 60
+    Caption = 'Open'
+    OnClick = BOpenComPortClick
+    TabOrder = 1
+  end
+  object BCloseComPort: TButton
+    Left = 248
+    Height = 25
+    Top = 8
+    Width = 60
+    Caption = 'Close'
+    OnClick = BCloseComPortClick
+    TabOrder = 2
+  end
+  object EditRawData: TEdit
+    Left = 80
+    Height = 27
+    Top = 36
+    Width = 96
+    TabOrder = 3
+    Text = 'Z00FF'
+  end
+  object BSerialSendRaw: TButton
+    Left = 4
+    Height = 25
+    Top = 34
+    Width = 60
+    Caption = 'SendRaw'
+    OnClick = BSerialSendRawClick
+    TabOrder = 4
+  end
+  object BReset: TButton
+    Left = 395
+    Height = 25
+    Top = 8
+    Width = 50
+    Anchors = [akTop, akRight]
+    Caption = 'Reset'
+    OnClick = BResetClick
+    TabOrder = 5
+  end
+  object Label2: TLabel
+    Left = 7
+    Height = 17
+    Top = 69
+    Width = 25
+    Caption = 'M1:'
+    ParentColor = False
+  end
+  object SBM1: TScrollBar
+    Left = 39
+    Height = 13
+    Top = 68
+    Width = 292
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1024
+    Min = -1024
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 6
+    OnChange = SBMxChange
+  end
+  object EditM1: TEdit
+    Left = 339
+    Height = 27
+    Top = 65
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditMxKeyDown
+    TabOrder = 7
+    Text = '0'
+  end
+  object BMxSet: TButton
+    Left = 395
+    Height = 25
+    Top = 63
+    Width = 50
+    Anchors = [akTop, akRight]
+    Caption = 'Set'
+    OnClick = BMxSetClick
+    TabOrder = 8
+  end
+  object CBSyncPWM: TCheckBox
+    Left = 184
+    Height = 24
+    Top = 36
+    Width = 95
+    Caption = 'Sync PWM'
+    TabOrder = 9
+  end
+  object PageControl: TPageControl
+    Left = 0
+    Height = 212
+    Top = 312
+    Width = 450
+    ActivePage = TabServos
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabIndex = 4
+    TabOrder = 10
+    object TabSpeed: TTabSheet
+      Caption = 'Speed'
+      ClientHeight = 181
+      ClientWidth = 446
+      object ChartSpeeds: TChart
+        Left = -2
+        Height = 156
+        Top = 28
+        Width = 443
+        AxisList = <        
+          item
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+          end        
+          item
+            Alignment = calBottom
+            MarginsForMarks = False
+            Minors = <>
+          end>
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        ParentColor = False
+        object SeriesSpeedM1: TLineSeries
+          LinePen.Color = clMaroon
+        end
+        object SeriesSpeedM2: TLineSeries
+          LinePen.Color = clGreen
+        end
+        object SeriesSpeedM3: TLineSeries
+          LinePen.Color = clNavy
+        end
+      end
+      object CBXY: TCheckBox
+        Left = 76
+        Height = 24
+        Top = 4
+        Width = 44
+        Caption = 'XY'
+        OnChange = CBXYChange
+        TabOrder = 1
+      end
+      object CBChartSpeedActive: TCheckBox
+        Left = 0
+        Height = 24
+        Top = 4
+        Width = 68
+        Caption = 'Active'
+        TabOrder = 2
+      end
+    end
+    object TabCurrent: TTabSheet
+      Caption = 'Current'
+      ClientHeight = 181
+      ClientWidth = 446
+      object ChartCurrents: TChart
+        Left = -2
+        Height = 156
+        Top = 28
+        Width = 444
+        AxisList = <        
+          item
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+          end        
+          item
+            Alignment = calBottom
+            Minors = <>
+          end>
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        ParentColor = False
+        object SeriesCurrentM1: TLineSeries
+          LinePen.Color = clMaroon
+        end
+        object SeriesCurrentM2: TLineSeries
+          LinePen.Color = clGreen
+        end
+        object SeriesCurrentM3: TLineSeries
+          LinePen.Color = clNavy
+        end
+      end
+      object CBChartCurrentActive: TCheckBox
+        Left = 0
+        Height = 24
+        Top = 4
+        Width = 68
+        Caption = 'Active'
+        TabOrder = 1
+      end
+    end
+    object TabDebug: TTabSheet
+      Caption = 'Debug'
+      ClientHeight = 181
+      ClientWidth = 446
+      object MemoDebug: TMemo
+        Left = -2
+        Height = 156
+        Top = 28
+        Width = 444
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        TabOrder = 0
+      end
+      object CBRawDebug: TCheckBox
+        Left = 0
+        Height = 24
+        Top = 4
+        Width = 100
+        Caption = 'Raw Debug'
+        TabOrder = 1
+      end
+      object CBExcel: TCheckBox
+        Left = 96
+        Height = 24
+        Top = 4
+        Width = 61
+        Caption = 'Excel'
+        TabOrder = 2
+      end
+      object BMemoClear: TButton
+        Left = 392
+        Height = 25
+        Top = 0
+        Width = 47
+        Anchors = [akTop, akRight]
+        Caption = 'Clear'
+        OnClick = BMemoClearClick
+        TabOrder = 3
+      end
+      object EditM1Delta: TEdit
+        Left = 336
+        Height = 27
+        Top = 0
+        Width = 48
+        Anchors = [akTop, akRight]
+        TabOrder = 4
+        Text = '0'
+      end
+      object EditM1Decimate: TEdit
+        Left = 280
+        Height = 27
+        Top = 0
+        Width = 48
+        Anchors = [akTop, akRight]
+        TabOrder = 5
+        Text = '0'
+      end
+    end
+    object TabConfig: TTabSheet
+      Caption = 'Config'
+      ClientHeight = 181
+      ClientWidth = 446
+      object BSetConfig: TButton
+        Left = 384
+        Height = 25
+        Top = 8
+        Width = 51
+        Anchors = [akTop, akRight]
+        Caption = 'Set'
+        OnClick = BSetConfigClick
+        TabOrder = 0
+      end
+      object EditTicksToRads: TEdit
+        Left = 96
+        Height = 27
+        Top = 8
+        Width = 72
+        AutoSelect = False
+        TabOrder = 1
+        Text = '0.0033853369111959'
+      end
+      object Label8: TLabel
+        Left = 4
+        Height = 17
+        Top = 12
+        Width = 93
+        Caption = 'Ticks To Rads:'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 4
+        Height = 17
+        Top = 40
+        Width = 112
+        Caption = 'Wheel Diameter:'
+        ParentColor = False
+      end
+      object EditWheelDiameter: TEdit
+        Left = 96
+        Height = 27
+        Top = 36
+        Width = 72
+        AutoSelect = False
+        TabOrder = 2
+        Text = '0.06'
+      end
+      object Label10: TLabel
+        Left = 176
+        Height = 17
+        Top = 40
+        Width = 23
+        Caption = '(m)'
+        ParentColor = False
+      end
+      object Label11: TLabel
+        Left = 4
+        Height = 17
+        Top = 68
+        Width = 76
+        Caption = 'Wheel Dist:'
+        ParentColor = False
+      end
+      object EditWheelDist: TEdit
+        Left = 96
+        Height = 27
+        Top = 64
+        Width = 72
+        AutoSelect = False
+        TabOrder = 3
+        Text = '0.1'
+      end
+      object Label12: TLabel
+        Left = 176
+        Height = 17
+        Top = 68
+        Width = 23
+        Caption = '(m)'
+        ParentColor = False
+      end
+    end
+    object TabServos: TTabSheet
+      Caption = 'Servos'
+      ClientHeight = 181
+      ClientWidth = 446
+      object Label20: TLabel
+        Left = 4
+        Height = 17
+        Top = 36
+        Width = 73
+        Caption = 'Servo Left:'
+        ParentColor = False
+      end
+      object EditServoLeftLow: TEdit
+        Left = 72
+        Height = 27
+        Top = 32
+        Width = 52
+        AutoSelect = False
+        TabOrder = 0
+        Text = '1000'
+      end
+      object BSetServos: TButton
+        Left = 386
+        Height = 25
+        Top = 8
+        Width = 51
+        Anchors = [akTop, akRight]
+        Caption = 'Set'
+        OnClick = BSetServosClick
+        TabOrder = 1
+      end
+      object Label21: TLabel
+        Left = 72
+        Height = 17
+        Top = 8
+        Width = 28
+        Caption = 'Low'
+        ParentColor = False
+      end
+      object EditServoLeftUp: TEdit
+        Left = 132
+        Height = 27
+        Top = 32
+        Width = 52
+        AutoSelect = False
+        TabOrder = 2
+        Text = '1000'
+      end
+      object Label22: TLabel
+        Left = 132
+        Height = 17
+        Top = 8
+        Width = 19
+        Caption = 'Up'
+        ParentColor = False
+      end
+      object EditServoLeftLock: TEdit
+        Left = 192
+        Height = 27
+        Top = 32
+        Width = 52
+        AutoSelect = False
+        TabOrder = 3
+        Text = '1000'
+      end
+      object Label23: TLabel
+        Left = 192
+        Height = 17
+        Top = 8
+        Width = 32
+        Caption = 'Lock'
+        ParentColor = False
+      end
+      object Label24: TLabel
+        Left = 4
+        Height = 17
+        Top = 64
+        Width = 80
+        Caption = 'Servo Right:'
+        ParentColor = False
+      end
+      object EditServoRightLow: TEdit
+        Left = 72
+        Height = 27
+        Top = 60
+        Width = 52
+        AutoSelect = False
+        TabOrder = 4
+        Text = '1000'
+      end
+      object EditServoRightUp: TEdit
+        Left = 132
+        Height = 27
+        Top = 60
+        Width = 52
+        AutoSelect = False
+        TabOrder = 5
+        Text = '1000'
+      end
+      object EditServoRightLock: TEdit
+        Left = 192
+        Height = 27
+        Top = 60
+        Width = 52
+        AutoSelect = False
+        TabOrder = 6
+        Text = '1000'
+      end
+      object RGServosPosition: TRadioGroup
+        Left = 72
+        Height = 48
+        Top = 92
+        Width = 172
+        AutoFill = True
+        Caption = 'Position'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.TopBottomSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 3
+        ClientHeight = 29
+        ClientWidth = 168
+        Columns = 3
+        ItemIndex = 0
+        Items.Strings = (
+          'Low'
+          'Up'
+          'Lock'
+        )
+        OnClick = RGServosPositionClick
+        TabOrder = 7
+      end
+    end
+    object TabJoystick: TTabSheet
+      Caption = 'Joystick'
+      ClientHeight = 181
+      ClientWidth = 446
+      object CBJoystick: TCheckBox
+        Left = 7
+        Height = 21
+        Top = 12
+        Width = 107
+        Caption = 'Joystick Active'
+        OnClick = CBJoystickClick
+        TabOrder = 0
+      end
+      object EditJoyDevice: TEdit
+        Left = 135
+        Height = 27
+        Top = 10
+        Width = 168
+        AutoSelect = False
+        TabOrder = 1
+        Text = '/dev/input/js0'
+      end
+      object EditJoyX: TEdit
+        Left = 135
+        Height = 27
+        Top = 42
+        Width = 168
+        TabOrder = 2
+        Text = 'EditJoyX'
+      end
+      object EditJoyB: TEdit
+        Left = 135
+        Height = 27
+        Top = 74
+        Width = 168
+        TabOrder = 3
+        Text = 'EditJoyB'
+      end
+    end
+    object TabNet: TTabSheet
+      Caption = 'Net'
+      ClientHeight = 181
+      ClientWidth = 446
+      object CBRemoteSpeeds: TCheckBox
+        Left = 5
+        Height = 24
+        Top = 8
+        Width = 131
+        Caption = 'Remote Speeds'
+        Checked = True
+        State = cbChecked
+        TabOrder = 0
+      end
+    end
+  end
+  object BStop: TButton
+    Left = 395
+    Height = 25
+    Top = 36
+    Width = 50
+    Anchors = [akTop, akRight]
+    Cancel = True
+    Caption = 'Stop'
+    OnClick = BStopClick
+    TabOrder = 11
+  end
+  object Label3: TLabel
+    Left = 7
+    Height = 17
+    Top = 93
+    Width = 25
+    Caption = 'M2:'
+    ParentColor = False
+  end
+  object SBM2: TScrollBar
+    Tag = 1
+    Left = 39
+    Height = 13
+    Top = 92
+    Width = 292
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1024
+    Min = -1024
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 12
+    OnChange = SBMxChange
+  end
+  object EditM2: TEdit
+    Left = 339
+    Height = 27
+    Top = 89
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditMxKeyDown
+    TabOrder = 13
+    Text = '0'
+  end
+  object Label4: TLabel
+    Left = 7
+    Height = 17
+    Top = 117
+    Width = 25
+    Caption = 'M3:'
+    ParentColor = False
+  end
+  object SBM3: TScrollBar
+    Tag = 2
+    Left = 40
+    Height = 13
+    Top = 116
+    Width = 292
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1024
+    Min = -1024
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 14
+    OnChange = SBMxChange
+  end
+  object EditM3: TEdit
+    Left = 339
+    Height = 27
+    Top = 113
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditMxKeyDown
+    TabOrder = 15
+    Text = '0'
+  end
+  object Label5: TLabel
+    Left = 7
+    Height = 17
+    Top = 220
+    Width = 14
+    Caption = 'V:'
+    ParentColor = False
+  end
+  object SBV: TScrollBar
+    Tag = 2
+    Left = 40
+    Height = 13
+    Top = 219
+    Width = 292
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1000
+    Min = -1000
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 16
+    OnChange = SBVVnWChange
+  end
+  object EditV: TEdit
+    Left = 339
+    Height = 27
+    Top = 216
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditVelsKeyDown
+    TabOrder = 17
+    Text = '0'
+  end
+  object Label6: TLabel
+    Left = 7
+    Height = 17
+    Top = 244
+    Width = 22
+    Caption = 'Vn:'
+    ParentColor = False
+  end
+  object SBVn: TScrollBar
+    Tag = 2
+    Left = 39
+    Height = 13
+    Top = 243
+    Width = 292
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1000
+    Min = -1000
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 18
+    OnChange = SBVVnWChange
+  end
+  object EditVn: TEdit
+    Left = 339
+    Height = 27
+    Top = 240
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditVelsKeyDown
+    TabOrder = 19
+    Text = '0'
+  end
+  object Label7: TLabel
+    Left = 7
+    Height = 17
+    Top = 268
+    Width = 18
+    Caption = 'W:'
+    ParentColor = False
+  end
+  object SBW: TScrollBar
+    Tag = 2
+    Left = 39
+    Height = 13
+    Top = 267
+    Width = 292
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1000
+    Min = -1000
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 20
+    OnChange = SBVVnWChange
+  end
+  object EditW: TEdit
+    Left = 340
+    Height = 27
+    Top = 264
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditVelsKeyDown
+    TabOrder = 21
+    Text = '0'
+  end
+  object BVelsSet: TButton
+    Left = 395
+    Height = 25
+    Top = 216
+    Width = 50
+    Anchors = [akTop, akRight]
+    Caption = 'Set'
+    OnClick = BVelsSetClick
+    TabOrder = 22
+  end
+  object CBContinous: TCheckBox
+    Left = 272
+    Height = 24
+    Top = 36
+    Width = 94
+    Caption = 'Continous'
+    TabOrder = 23
+  end
+  object CBPID: TCheckBox
+    Left = 7
+    Height = 24
+    Top = 138
+    Width = 49
+    Caption = 'PID'
+    TabOrder = 24
+  end
+  object SBW1: TScrollBar
+    Left = 196
+    Height = 13
+    Top = 140
+    Width = 136
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1000
+    Min = -1000
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 25
+    OnChange = SBWxChange
+  end
+  object SBW2: TScrollBar
+    Tag = 1
+    Left = 196
+    Height = 13
+    Top = 164
+    Width = 136
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1000
+    Min = -1000
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 26
+    OnChange = SBWxChange
+  end
+  object SBW3: TScrollBar
+    Tag = 2
+    Left = 196
+    Height = 13
+    Top = 188
+    Width = 136
+    Anchors = [akTop, akLeft, akRight]
+    LargeChange = 100
+    Max = 1000
+    Min = -1000
+    PageSize = 0
+    SmallChange = 4
+    TabOrder = 27
+    OnChange = SBWxChange
+  end
+  object Label13: TLabel
+    Left = 168
+    Height = 17
+    Top = 144
+    Width = 26
+    Caption = 'W1:'
+    ParentColor = False
+  end
+  object Label14: TLabel
+    Left = 3
+    Height = 17
+    Top = 165
+    Width = 19
+    Caption = 'Kf:'
+    ParentColor = False
+  end
+  object EditKf: TEdit
+    Left = 25
+    Height = 27
+    Top = 163
+    Width = 54
+    TabOrder = 28
+    Text = '1'
+  end
+  object Label15: TLabel
+    Left = 84
+    Height = 17
+    Top = 165
+    Width = 22
+    Caption = 'Kp:'
+    ParentColor = False
+  end
+  object EditKp: TEdit
+    Left = 106
+    Height = 27
+    Top = 163
+    Width = 54
+    TabOrder = 29
+    Text = '0'
+  end
+  object Label16: TLabel
+    Left = 168
+    Height = 17
+    Top = 167
+    Width = 26
+    Caption = 'W2:'
+    ParentColor = False
+  end
+  object Label17: TLabel
+    Left = 168
+    Height = 17
+    Top = 189
+    Width = 26
+    Caption = 'W3:'
+    ParentColor = False
+  end
+  object Label18: TLabel
+    Left = 4
+    Height = 17
+    Top = 189
+    Width = 17
+    Caption = 'Ki:'
+    ParentColor = False
+  end
+  object EditKi: TEdit
+    Left = 25
+    Height = 27
+    Top = 187
+    Width = 54
+    TabOrder = 30
+    Text = '0'
+  end
+  object Label19: TLabel
+    Left = 85
+    Height = 17
+    Top = 189
+    Width = 22
+    Caption = 'Kd:'
+    ParentColor = False
+  end
+  object EditKd: TEdit
+    Left = 106
+    Height = 27
+    Top = 187
+    Width = 54
+    TabOrder = 31
+    Text = '0'
+  end
+  object EditW1: TEdit
+    Left = 339
+    Height = 27
+    Top = 139
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditWxKeyDown
+    TabOrder = 32
+    Text = '0'
+  end
+  object BWxSet: TButton
+    Left = 395
+    Height = 25
+    Top = 138
+    Width = 50
+    Anchors = [akTop, akRight]
+    Caption = 'Set'
+    OnClick = BWxSetClick
+    TabOrder = 33
+  end
+  object EditW2: TEdit
+    Left = 339
+    Height = 27
+    Top = 163
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditWxKeyDown
+    TabOrder = 34
+    Text = '0'
+  end
+  object EditW3: TEdit
+    Left = 339
+    Height = 27
+    Top = 187
+    Width = 48
+    Anchors = [akTop, akRight]
+    AutoSelect = False
+    OnKeyDown = EditWxKeyDown
+    TabOrder = 35
+    Text = '0'
+  end
+  object BPIDSet: TButton
+    Left = 106
+    Height = 25
+    Top = 136
+    Width = 54
+    Caption = 'Set'
+    OnClick = BPIDSetClick
+    TabOrder = 36
+  end
+  object Serial: TSdpoSerial
+    Active = False
+    BaudRate = br115200
+    DataBits = db8bits
+    Parity = pNone
+    FlowControl = fcNone
+    StopBits = sbOne
+    Device = 'COM1'
+    OnRxData = SerialRxData
+    left = 252
+    top = 72
+  end
+  object IniPropStorage: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'config.ini'
+    IniSection = 'main'
+    left = 220
+    top = 72
+  end
+  object Joystick: TSdpoJoystick
+    Active = False
+    DeviceLin = '/dev/input/js1'
+    DeviceWin = dwJoystickID1
+    left = 384
+    top = 368
+  end
+  object UDPVel: TLUDPComponent
+    Port = 0
+    OnReceive = UDPVelReceive
+    OnError = UDPVelError
+    Timeout = 0
+    left = 376
+    top = 448
+  end
+end
