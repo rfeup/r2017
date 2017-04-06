@@ -117,19 +117,19 @@ procedure TFHal.ChangePartColor(color_part: array of TPart);
 var partN: integer;
 begin
     partN:=1;
-    color_part[1].PartType:=B;
+    color_part[1].PartType:=A;
     Part1.Color := setcolor(color_part[1].PartType, partN);
     partN:=2;
-    color_part[2].PartType:=D;
+    color_part[2].PartType:=C;
     Part2.Color := setcolor(color_part[2].PartType, partN);
     partN:=3;
-    color_part[3].PartType:=D;
+    color_part[3].PartType:=B;
     Part3.Color := setcolor(color_part[3].PartType, partN);
     partN:=4;
-    color_part[4].PartType:=D;
+    color_part[4].PartType:=B;
     Part4.Color := setcolor(color_part[4].PartType, partN);
     partN:=5;
-    color_part[5].PartType:=D;
+    color_part[5].PartType:=C;
     Part5.Color := setcolor(color_part[5].PartType, partN);
 end;
 

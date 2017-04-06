@@ -1,5 +1,5 @@
 object FPaint: TFPaint
-  Left = 760
+  Left = 481
   Height = 402
   Top = 216
   Width = 541
@@ -11,7 +11,7 @@ object FPaint: TFPaint
   OnMouseUp = FormMouseUp
   OnPaint = FormPaint
   SessionProperties = 'Left;Top;Width;Height'
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.2.6.0'
   object IniPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'config.ini'

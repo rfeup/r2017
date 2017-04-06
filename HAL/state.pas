@@ -205,7 +205,7 @@ begin
   end else begin
     ramp_slope := 3; // approach slope in m/s per meter
   end; *)
-  ramp_slope := 4;
+  ramp_slope := 5;
 
   d := Dist(rpx, rpy);
 
@@ -241,7 +241,7 @@ begin
   error_teta := DiffAngle(RobotState.teta, action.teta);
 
   // approach slope in m/s per meter
-  ramp_slope := 4; // approach slope in m/s per meter
+  ramp_slope := 5; // approach slope in m/s per meter
 
   d := Dist(rpx, rpy);
 

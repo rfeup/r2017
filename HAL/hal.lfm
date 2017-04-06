@@ -1,7 +1,7 @@
 object FHal: TFHal
-  Left = 1162
+  Left = 308
   Height = 487
-  Top = 324
+  Top = 255
   Width = 714
   Caption = 'HAL'
   ClientHeight = 487

@@ -241,7 +241,7 @@ begin
   error_teta := DiffAngle(RobotState.teta, action.teta);
 
   // approach slope in m/s per meter
-  ramp_slope := 4; // approach slope in m/s per meter
+  ramp_slope := 5; // approach slope in m/s per meter
 
   d := Dist(rpx, rpy);
 
@@ -788,7 +788,7 @@ begin
   count3 := 0;
   AddHalfRun(n1, n2);
 
-  defaultSpeed := 0.5;
+  defaultSpeed := 0.519;
 
  (* asAddGotoXY(n2.x, n2.y, rad(n2.teta), ATan2(n2.y-n1.y,n2.x-n1.x), 0.2);        *)
 
