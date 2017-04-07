@@ -1,0 +1,30 @@
+Entrada e saída com velocidades diferentes (saida do armazem pode ser mais rapida que o resto porque nao tem peça)
+					    Nao alinhar pelas linhas do campo
+
+Ajustar garra para pegar na caixa
+
+Alinhar no armazem por seguidor de linha
+
+Ajustar pega da caixa (para não bater nos limites do campo)
+
+Spoiler
+
+Velocidade no spline mais rapida
+
+Reta na diagonal durante a spline
+
+ajustar Garras para pegar a meio da caixa
+
+Retirar peso (retirar barra de baixo do laser por parafusos e anilhas)
+	      cortar cantos
+	      aproximar coisas 	
+
+Trocar USB para cabos mais curtos
+
+LEDs em baixo
+
+Velcro na bateria
+
+
+Estimativa 2:50 Missao 1
+
