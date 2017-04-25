@@ -9,7 +9,7 @@ object FCamFeatures: TFCamFeatures
   OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Top;Left;Width;Height'
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.6.0'
   object SGVideoControls: TStringGrid
     Left = 0
     Height = 438
@@ -17,7 +17,6 @@ object FCamFeatures: TFCamFeatures
     Width = 426
     Anchors = [akTop, akLeft, akRight, akBottom]
     AutoAdvance = aaNone
-    ColCount = 4
     Columns = <    
       item
         Title.Caption = 'Property'
@@ -34,6 +33,9 @@ object FCamFeatures: TFCamFeatures
       item
         Title.Caption = 'Max'
         Width = 70
+      end    
+      item
+        Title.Caption = 'Flags'
       end>
     DefaultRowHeight = 20
     FixedCols = 0
@@ -46,6 +48,7 @@ object FCamFeatures: TFCamFeatures
       70
       70
       70
+      64
     )
   end
   object LabelFeature: TLabel
@@ -109,8 +112,9 @@ object FCamFeatures: TFCamFeatures
   end
   object IniPropStorage: TIniPropStorage
     StoredValues = <>
+    IniFileName = 'config.ini'
     IniSection = 'CamFeatures'
-    left = 260
-    top = 60
+    left = 152
+    top = 504
   end
 end

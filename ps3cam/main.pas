@@ -110,6 +110,8 @@ begin
   UDPRob.Disconnect();
 end;
 
+
+
 procedure TFMain.qsort(var a : TMaxColorArray);
 
     procedure sort(l,r: longint);

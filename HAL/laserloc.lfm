@@ -17,9 +17,9 @@ object FLaserLoc: TFLaserLoc
     Height = 383
     Top = 113
     Width = 603
-    ActivePage = TabLaser
+    ActivePage = TabSettings
     Align = alBottom
-    TabIndex = 0
+    TabIndex = 3
     TabOrder = 0
     object TabLaser: TTabSheet
       Caption = 'Laser'
@@ -446,8 +446,8 @@ object FLaserLoc: TFLaserLoc
   end
   object TabRadial: TTabSheet
     Caption = 'Radial'
-    ClientHeight = 69128
-    ClientWidth = 78984
+    ClientHeight = 70616
+    ClientWidth = 80793
     object PaintBox: TPaintBox
       Left = 0
       Height = 424
@@ -612,8 +612,8 @@ object FLaserLoc: TFLaserLoc
     Port = 9876
     OnReceive = UDPReceive
     Timeout = 0
-    left = 504
-    top = 16
+    left = 479
+    top = 240
   end
   object IniPropStorage: TIniPropStorage
     StoredValues = <>
@@ -625,21 +625,22 @@ object FLaserLoc: TFLaserLoc
   object UDPSend: TLUDPComponent
     Port = 0
     Timeout = 0
-    left = 504
-    top = 76
+    left = 479
+    top = 352
   end
   object UDPOdo: TLUDPComponent
     Port = 9001
     OnReceive = UDPOdoReceive
+    OnError = UDPOdoError
     Timeout = 0
-    left = 552
-    top = 24
+    left = 479
+    top = 296
   end
   object UDPCamera: TLUDPComponent
     Port = 9020
     OnReceive = UDPCameraReceive
     Timeout = 0
-    left = 552
-    top = 76
+    left = 480
+    top = 408
   end
 end

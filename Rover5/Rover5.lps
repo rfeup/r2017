@@ -9,6 +9,7 @@
         <Filename Value="Rover5.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Rover5"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -23,10 +24,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="main"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="608"/>
+        <TopLine Value="196"/>
         <CursorPos X="38" Y="629"/>
         <UsageCount Value="202"/>
         <Bookmarks Count="2">
@@ -51,7 +51,7 @@
         <UnitName Value="motor"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="60"/>
+        <TopLine Value="51"/>
         <CursorPos X="16" Y="74"/>
         <UsageCount Value="170"/>
         <Loaded Value="True"/>

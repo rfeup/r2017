@@ -22,52 +22,58 @@ type
 
   { TFPaint }
 
-  TFPaint = class(TForm)
-    IniPropStorage: TIniPropStorage;
-    procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
-    procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
-    procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
-    procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
-    procedure FormPaint(Sender: TObject);
-  private
-    procedure BuildField;
-    procedure DrawLaser(R: TPose; var LaserPoints: TLaserPoints);
-    procedure GradMapToBGRABitmap(aBitMap: TBGRABitmap; Map: TGradMap;
-      factor: double);
-    { private declarations }
-  public
-    bmp, bmp_draw: TBGRABitmap;
+TFPaint = class(TForm)
 
-    DistMap: TDistMap;
-    GradXMap, GradYMap, GradThetaMap: TGradMap;
+IniPropStorage: TIniPropStorage;
+procedure FormCreate(Sender: TObject);
+procedure FormDestroy(Sender: TObject);
+procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
+Shift: TShiftState; X, Y: Integer);
+procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
+Shift: TShiftState; X, Y: Integer);
+procedure FormPaint(Sender: TObject);
 
-    fieldX, fieldY: double;
-    MachineTopX, MachineTopY, MachineX, MachineY: double;
-    mouse_down: boolean;
-    mouse_u, mouse_v: integer;
-    mouse_x, mouse_Y: double;
 
-    RobotPoints: ArrayOfTPointF;
-    RobotXsize, RobotYSize, RobotOffsetX: double;
+private
 
-    function XTopixel(x: double): integer; inline;
-    function YTopixel(y: double): integer; inline;
+procedure BuildField;
+procedure DrawLaser(R: TPose; var LaserPoints: TLaserPoints);
+procedure GradMapToBGRABitmap(aBitMap: TBGRABitmap; Map: TGradMap;
+factor: double);
 
-    function pixelToX(u: integer): double;
-    function pixelToY(v: integer): double;
+{ private declarations }
+public
 
-    procedure BGRABitmapToDistMap(var Map: TDistMap; aBitMap: TBGRABitmap);
-    procedure DistMapToBGRABitmap(aBitMap: TBGRABitmap; Map: TDistMap);
-    procedure CalcDistMap(var Map: TDistMap);
-    procedure CalcGradMap(var aGradXMap, aGradYMap: TGradMap; Map: TDistMap);
-    function ScanDistMap(var Map: TDistMap; v: integer): integer;
-    function d_err(d: double): double;
-    procedure DrawRobot(R: TPose);
-    procedure IterLaser(var R: TPose; LaserPoints: TLaserPoints; FirstIdx, LastIdx: integer; scale: double);
-  end;
+bmp, bmp_draw: TBGRABitmap;
+
+DistMap: TDistMap;
+GradXMap, GradYMap, GradThetaMap: TGradMap;
+
+fieldX, fieldY: double;
+MachineTopX, MachineTopY, MachineX, MachineY: double;
+mouse_down: boolean;
+mouse_u, mouse_v: integer;
+mouse_x, mouse_Y: double;
+
+RobotPoints: ArrayOfTPointF;
+RobotXsize, RobotYSize, RobotOffsetX: double;
+
+function XTopixel(x: double): integer; inline;
+function YTopixel(y: double): integer; inline;
+
+function pixelToX(u: integer): double;
+function pixelToY(v: integer): double;
+
+procedure BGRABitmapToDistMap(var Map: TDistMap; aBitMap: TBGRABitmap);
+procedure DistMapToBGRABitmap(aBitMap: TBGRABitmap; Map: TDistMap);
+procedure CalcDistMap(var Map: TDistMap);
+procedure CalcGradMap(var aGradXMap, aGradYMap: TGradMap; Map: TDistMap);
+function ScanDistMap(var Map: TDistMap; v: integer): integer;
+function d_err(d: double): double;
+procedure DrawRobot(R: TPose);
+procedure IterLaser(var R: TPose; LaserPoints: TLaserPoints; FirstIdx, LastIdx: integer; scale: double);
+end;
 
 var
   FPaint: TFPaint;
@@ -151,8 +157,6 @@ begin
 
   BuildField();
 end;
-
-
 
 
 procedure TFPaint.FormDestroy(Sender: TObject);

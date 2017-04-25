@@ -114,6 +114,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure UDPCameraReceive(aSocket: TLSocket);
+    procedure UDPOdoError(const msg: string; aSocket: TLSocket);
     procedure UDPOdoReceive(aSocket: TLSocket);
     procedure UDPReceive(aSocket: TLSocket);
   private
@@ -301,7 +302,7 @@ begin
   UDPCamera.Connect('127.0.0.1',9020);
   UDPCamera.Listen(9020);
 
-  BuildStateMachine(true);
+  BuildStateMachine(true, false);
 
 end;
 
@@ -315,6 +316,11 @@ begin
     UDPCameraReceivePart(messaC);
 end;
 
+procedure TFLaserLoc.UDPOdoError(const msg: string; aSocket: TLSocket);
+begin
+
+end;
+
 procedure TFLaserLoc.UDPOdoReceive(aSocket: TLSocket);
 {Var
 dx,dy,dth : double;
@@ -326,6 +332,7 @@ var dx,dy,dth : double;
     halfTeta, sqrt3, d, r: double;
     v_odo, vn_odo, w_odo: double;
     v, vn, w : double;
+
 begin
   ReceiveWrMessage(0);
 
@@ -378,15 +385,20 @@ begin
   RobotState.last_vn := RobotState.vn;
   RobotState.last_w := RobotState.w;
 
-  v:=0; vn:=0;w:=0;
+  v:=0;
+  vn:=0;
+  w:=0;
+
   ControlRobot(v, vn, w, RobotState);
   //debug(inttostr(CurStep));
+
   RobotState.v := v;
   RobotState.vn := vn;
   RobotState.w := w;
 
   if (CBSendLock.Checked) then
      SendVelServMessage(0);
+
   {if CBSendLock.Checked then
     SendLoc(EditSendLockIP.Text, SendLockPort, Pose_loc);
    }

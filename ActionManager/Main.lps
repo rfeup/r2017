@@ -42,11 +42,10 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1554"/>
-        <CursorPos X="16" Y="1565"/>
+        <TopLine Value="167"/>
+        <CursorPos X="78" Y="171"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="/usr/share/lazarus/1.0.14/components/Sdpo/SdpoDynmatrix/dynmatrixutils.pas"/>
@@ -69,7 +68,7 @@
         <UnitName Value="DistMap"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="19"/>
+        <TopLine Value="10"/>
         <CursorPos X="10" Y="13"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
@@ -89,7 +88,7 @@
         <UnitName Value="Astarlib"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="249"/>
+        <TopLine Value="1"/>
         <CursorPos X="53" Y="261"/>
         <UsageCount Value="101"/>
         <Loaded Value="True"/>
@@ -99,9 +98,9 @@
         <UnitName Value="BinHeap"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="17"/>
+        <TopLine Value="1"/>
         <CursorPos X="6" Y="14"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -109,7 +108,7 @@
         <UnitName Value="PathFollowing"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="24"/>
+        <TopLine Value="103"/>
         <CursorPos X="28" Y="37"/>
         <UsageCount Value="101"/>
         <Loaded Value="True"/>
@@ -151,9 +150,9 @@
         <UnitName Value="Utils"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="199"/>
+        <TopLine Value="1"/>
         <CursorPos X="3" Y="201"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit15>
     </Units>

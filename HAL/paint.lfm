@@ -1,7 +1,7 @@
 object FPaint: TFPaint
-  Left = 481
+  Left = 354
   Height = 402
-  Top = 216
+  Top = 147
   Width = 541
   Caption = 'Position'
   OnCreate = FormCreate

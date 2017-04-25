@@ -84,6 +84,10 @@ begin
 end;
 
 
+
+
+
+
 procedure TFCamFeatures.BFeatureValueSetClick(Sender: TObject);
 var newvalue: integer;
 begin

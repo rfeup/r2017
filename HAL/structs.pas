@@ -44,7 +44,7 @@ type
 
     {*************** Parts  ********************}
 
-  TPartType = (A, B, C, D);
+  TPartType = (R, G, B, N);
 
 
   TPart = record

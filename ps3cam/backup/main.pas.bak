@@ -51,6 +51,7 @@ type
     StatusBar: TStatusBar;
     Video: TSdpoVideo4L2;
     procedure FormDestroy(Sender: TObject);
+    procedure IniPropStorageRestoringProperties(Sender: TObject);
     procedure SendCameraMessage(mtype: integer);
     procedure CBVideoActiveChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -100,7 +101,7 @@ begin
 
     ld := max_index_array[4].Color;
     NetPutString(NetOutBuf, ld);
-    ShowMessage('oiiiiiiiiii');
+
 
     UDPRob.Send(NetOutBuf.data, NetOutBuf.MessSize, '127.0.0.1:9020');
 end;
@@ -109,6 +110,8 @@ procedure TFMain.FormDestroy(Sender: TObject);
 begin
   UDPRob.Disconnect();
 end;
+
+
 
 procedure TFMain.qsort(var a : TMaxColorArray);
 

@@ -1,8 +1,35 @@
-/home/dpo/Desktop/R@F_2017_v1/ConnectLaser/laser 
+/home/dpo/Desktop/R@F_2017_v2/ConnectLaser/laser 
 Heap dump by heaptrc unit
-1611592 memory blocks allocated : 749291254/756882624
-1611592 memory blocks freed     : 749291254/756882624
-0 unfreed memory blocks : 0
-True heap size : 950272
-True free heap : 949008
-Should be : 950272
+7934191 memory blocks allocated : 1950031626/1985080280
+7934188 memory blocks freed     : 1950031402/1985080048
+3 unfreed memory blocks : 224
+True heap size : 1048576
+True free heap : 1046848
+Should be : 1048152
+Call trace for block $B5E63060 size 32
+  $08175DB0  ADDEVENTHANDLER,  line 32 of ./include/lclintf.inc
+  $084411D5  TLCLEVENTER__ADDHANDLE,  line 93 of lclgtkeventer.inc
+  $08442D7E  TLCONNECTION__REGISTERWITHEVENTER,  line 1099 of /usr/share/lazarus/1.2.6/components/lnet/lib/lnet.pp
+  $080978AC  TFLASERS__FORMSHOW,  line 368 of lasers.pas
+  $08085CBC  TCUSTOMFORM__DOSHOW,  line 1010 of ./include/customform.inc
+  $08085180  TCUSTOMFORM__CMSHOWINGCHANGED,  line 629 of ./include/customform.inc
+  $0806D8C6
+  $081E5FA0  TWINCONTROL__WNDPROC,  line 5326 of ./include/wincontrol.inc
+Call trace for block $B625DDC0 size 12
+  $08442D7E  TLCONNECTION__REGISTERWITHEVENTER,  line 1099 of /usr/share/lazarus/1.2.6/components/lnet/lib/lnet.pp
+  $080978AC  TFLASERS__FORMSHOW,  line 368 of lasers.pas
+  $08085CBC  TCUSTOMFORM__DOSHOW,  line 1010 of ./include/customform.inc
+  $08085180  TCUSTOMFORM__CMSHOWINGCHANGED,  line 629 of ./include/customform.inc
+  $0806D8C6
+  $081E5FA0  TWINCONTROL__WNDPROC,  line 5326 of ./include/wincontrol.inc
+  $08086AF7  TCUSTOMFORM__WNDPROC,  line 1430 of ./include/customform.inc
+  $081F0DD6  TCONTROL__PERFORM,  line 1445 of ./include/control.inc
+Call trace for block $B6365B60 size 180
+  $084430B8  TLUDP__LISTEN,  line 1167 of /usr/share/lazarus/1.2.6/components/lnet/lib/lnet.pp
+  $080978AC  TFLASERS__FORMSHOW,  line 368 of lasers.pas
+  $08085CBC  TCUSTOMFORM__DOSHOW,  line 1010 of ./include/customform.inc
+  $08085180  TCUSTOMFORM__CMSHOWINGCHANGED,  line 629 of ./include/customform.inc
+  $0806D8C6
+  $081E5FA0  TWINCONTROL__WNDPROC,  line 5326 of ./include/wincontrol.inc
+  $08086AF7  TCUSTOMFORM__WNDPROC,  line 1430 of ./include/customform.inc
+  $081F0DD6  TCONTROL__PERFORM,  line 1445 of ./include/control.inc

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, structs;
+  StdCtrls, ExtCtrls, IniPropStorage, structs;
 
 type
 
@@ -14,22 +14,31 @@ type
 
   TFHal = class(TForm)
     BSetMission: TButton;
+    EDefaultSpeed: TEdit;
+    EApproachSpeed: TEdit;
+    EPathRadius: TEdit;
+    GBVariables: TGroupBox;
+    IniPropStorage: TIniPropStorage;
+    LDefaultSpeed: TLabel;
+    LApproachSpeed: TLabel;
+    LPathRadius: TLabel;
+    RGOperationMode: TRadioGroup;
     BStart: TButton;
     CBDebug: TCheckBox;
     EditMacFrom: TEdit;
     EditMacTo: TEdit;
-    EditActionDebug: TLabeledEdit;
+    EActionDebug: TLabeledEdit;
     EditYDebug: TLabeledEdit;
     EditThDebug: TLabeledEdit;
     debugBoxColor: TLabeledEdit;
     GBWareMac: TGroupBox;
     From: TLabel;
     EditXDebug: TLabeledEdit;
-    Memo1: TMemo;
+    DebugMenu: TMemo;
     Tolabel: TLabel;
-    Part1: TEdit;
     GBParts: TGroupBox;
     inesc: TImage;
+    Part1: TEdit;
     Part2: TEdit;
     Part3: TEdit;
     Part4: TEdit;
@@ -38,9 +47,9 @@ type
     procedure BSetMissionClick(Sender: TObject);
     procedure BStartClick(Sender: TObject);
     procedure ChangePartColor(color_part:  array of TPart);
-    procedure debugBoxColorChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Memo1Change(Sender: TObject);
+    procedure GBPartsClick(Sender: TObject);
+
     function setcolor(PartType : TPartType; var partNumber: integer): TColor;
   private
     { private declarations }
@@ -53,90 +62,99 @@ var
   FHal: TFHal;
 
 implementation
+
 uses state, laserloc;
+
+{------------------------------------------------------------------------------
+       TFHal.SetColor
+------------------------------------------------------------------------------}
+
 function TFHal.setcolor(PartType : TPartType; var partNumber: integer): TColor;
 var partcolor:TColor;
 begin
 
-    if PartType = A then begin
+    if PartType = R then begin
       partcolor:= clRed;
       if ve = 1 then begin
-            memo1.append('red');
-            PartsScript[totalParts].PartType:= A;
+            DebugMenu.append('red');
+            PartsScript[totalParts].PartType:= R;
             PartsScript[totalParts].ID:= totalParts;
             PartsScript[totalParts].Node:= BoxPlaces[totalParts];
             ve := 25;
       end
       else if  ((ve = 2) and (partNumber = 5)) then begin
-           memo1.append('red');
-           PartsScript[totalParts].PartType:= A;
+           DebugMenu.append('red');
+           PartsScript[totalParts].PartType:= R;
            PartsScript[totalParts].ID:= totalParts;
            PartsScript[totalParts].Node:= BoxPlaces[totalParts];
            ve := 25;
       end;
 
-   end else if PartType = B then begin
+   end else if PartType = G then begin
       partcolor:= clGreen;
-            if ve = 1 then begin
-            memo1.append('green');
+      if ve = 1 then begin
+            DebugMenu.append('green');
+            PartsScript[totalParts].PartType:= G;
+            PartsScript[totalParts].ID:= totalParts;
+            PartsScript[totalParts].Node:= BoxPlaces[totalParts];
+            ve := 25;
+      end
+      else if  ((ve = 2) and (partNumber = 5)) then begin
+            DebugMenu.append('green');
+            PartsScript[totalParts].PartType:= G;
+            PartsScript[totalParts].ID:= totalParts;
+            PartsScript[totalParts].Node:= BoxPlaces[totalParts];
+            ve := 25;
+      end;
+   end else if PartType = B then begin
+      partcolor:= clBlue;
+      if ve = 1 then begin
+            DebugMenu.append('blue');
             PartsScript[totalParts].PartType:= B;
             PartsScript[totalParts].ID:= totalParts;
             PartsScript[totalParts].Node:= BoxPlaces[totalParts];
             ve := 25;
-            end
-            else if  ((ve = 2) and (partNumber = 5)) then begin
-                 memo1.append('green');
-                 PartsScript[totalParts].PartType:= B;
-                 PartsScript[totalParts].ID:= totalParts;
-                 PartsScript[totalParts].Node:= BoxPlaces[totalParts];
-                 ve := 25;
-            end;
-   end else if PartType = C then begin
-      partcolor:= clBlue;
-            if ve = 1 then begin
-            memo1.append('blue');
-            PartsScript[totalParts].PartType:= C;
+      end
+      else if  ((ve = 2) and (partNumber = 5)) then begin
+            DebugMenu.append('blue');
+            PartsScript[totalParts].PartType:= B;
             PartsScript[totalParts].ID:= totalParts;
             PartsScript[totalParts].Node:= BoxPlaces[totalParts];
             ve := 25;
-            end
-            else if  ((ve = 2) and (partNumber = 5)) then begin
-                 memo1.append('blue');
-                 PartsScript[totalParts].PartType:= C;
-                 PartsScript[totalParts].ID:= totalParts;
-                 PartsScript[totalParts].Node:= BoxPlaces[totalParts];
-                 ve := 25;
-            end;
-   end else  begin
+      end;
+   end else begin
       partcolor:= clBlack;
    end;
    Result:=partcolor;
 end;
 
+{------------------------------------------------------------------------------
+       TFHal.ChangePartColor
+------------------------------------------------------------------------------}
+
 procedure TFHal.ChangePartColor(color_part: array of TPart);
 var partN: integer;
 begin
     partN:=1;
-    color_part[1].PartType:=A;
+    color_part[1].PartType:=R;
     Part1.Color := setcolor(color_part[1].PartType, partN);
     partN:=2;
-    color_part[2].PartType:=C;
+    color_part[2].PartType:=B;
     Part2.Color := setcolor(color_part[2].PartType, partN);
     partN:=3;
-    color_part[3].PartType:=B;
+    color_part[3].PartType:=G;
     Part3.Color := setcolor(color_part[3].PartType, partN);
     partN:=4;
-    color_part[4].PartType:=B;
+    color_part[4].PartType:=G;
     Part4.Color := setcolor(color_part[4].PartType, partN);
     partN:=5;
-    color_part[5].PartType:=C;
+    color_part[5].PartType:=B;
     Part5.Color := setcolor(color_part[5].PartType, partN);
 end;
 
-procedure TFHal.debugBoxColorChange(Sender: TObject);
-begin
-
-end;
+{------------------------------------------------------------------------------
+       TFHal.FormShow
+------------------------------------------------------------------------------}
 
 procedure TFHal.FormShow(Sender: TObject);
 begin
@@ -147,43 +165,59 @@ begin
    Part5.Color := clBlack;
 end;
 
-procedure TFHal.Memo1Change(Sender: TObject);
-begin
 
-end;
+
+
+
+
+
+{------------------------------------------------------------------------------
+       TFHal.BSetMissionClick
+------------------------------------------------------------------------------}
 
 procedure TFHal.BSetMissionClick(Sender: TObject);
+var missao: integer;
 begin
-  (*Pose_loc.x := BoxPlaces[18].x;
+
+  Pose_loc.x := BoxPlaces[18].x;
   Pose_loc.y := BoxPlaces[18].y;
   Pose_loc.theta := BoxPlaces[18].teta;
   RobotState.servo1 := 0;
   RobotState.servo2 := 0;
 
-  memo1.Clear;
+  DebugMenu.Clear;
   ve := 0;
   rebuild := 0;
-  BuildStateMachine(true);
-  ResetStateMachine();  *)
 
-   memo1.Clear;
-   memo1.Append('red');
-   memo1.Append('blue');
-   memo1.Append('green');
-   memo1.Append('green');
-   memo1.Append('blue');
+  case RGOperationMode.ItemIndex of
+       0 : BuildStateMachine(false, false);
+       1 : BuildStateMachine(true, false);
+       2 : BuildStateMachine(false, true);
+  end;
 
-   PartsScript[1].PartType:= A;
-                 PartsScript[1].ID:= 1;
-                 PartsScript[1].Node:= BoxPlaces[1];
+  ResetStateMachine();
 
-   ChangePartColor(PartsScript);
+   (*DebugMenu.Clear;
+   DebugMenu.Append('red');
+   DebugMenu.Append('blue');
+   DebugMenu.Append('green');
+   DebugMenu.Append('green');
+   DebugMenu.Append('blue');*)
+
+
+
 end;
+
+{------------------------------------------------------------------------------
+       TFHal.StartButtonClick
+------------------------------------------------------------------------------}
 
 procedure TFHal.BStartClick(Sender: TObject);
 begin
+
   FLaserLoc.CBSendLock.Checked := not(FLaserLoc.CBSendLock.Checked);
   init  := 0;
+
 end;
 
 

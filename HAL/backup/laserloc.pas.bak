@@ -301,7 +301,7 @@ begin
   UDPCamera.Connect('127.0.0.1',9020);
   UDPCamera.Listen(9020);
 
-  BuildStateMachine(true);
+  BuildStateMachine(true, false);
 
 end;
 
@@ -326,6 +326,7 @@ var dx,dy,dth : double;
     halfTeta, sqrt3, d, r: double;
     v_odo, vn_odo, w_odo: double;
     v, vn, w : double;
+
 begin
   ReceiveWrMessage(0);
 
@@ -378,25 +379,20 @@ begin
   RobotState.last_vn := RobotState.vn;
   RobotState.last_w := RobotState.w;
 
-  v:=0; vn:=0;w:=0;
+  v:=0;
+  vn:=0;
+  w:=0;
+
   ControlRobot(v, vn, w, RobotState);
   //debug(inttostr(CurStep));
+
   RobotState.v := v;
   RobotState.vn := vn;
   RobotState.w := w;
 
-  if (init = 1) then begin
-    FLaserLoc.CBSendLock.Checked := not(FLaserLoc.CBSendLock.Checked);
-    init := 2;
-  end;
-
-  if (init = 0) and (FHal.RGMission.ItemIndex <> 0) and (abs(pose_loc.x - BoxPlaces[4].x) < 0.02) and (abs(pose_loc.y - BoxPlaces[4].y) < 0.02) then begin
-    FLaserLoc.CBSendLock.Checked := not(FLaserLoc.CBSendLock.Checked);
-    init := 1;
-  end;
-
   if (CBSendLock.Checked) then
      SendVelServMessage(0);
+
   {if CBSendLock.Checked then
     SendLoc(EditSendLockIP.Text, SendLockPort, Pose_loc);
    }

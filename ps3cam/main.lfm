@@ -128,14 +128,14 @@ object FMain: TFMain
     Caption = 'Image'
     ImageType = itNormal
     AlwaysOnTop = False
-    left = 224
-    top = 32
+    left = 216
+    top = 144
   end
   object IniPropStorage: TIniPropStorage
     StoredValues = <>
     IniSection = 'Main'
-    left = 264
-    top = 32
+    left = 280
+    top = 144
   end
   object UDPRob: TLUDPComponent
     Port = 9021

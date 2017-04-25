@@ -20,7 +20,7 @@ type
 
     {*************** Actions  ********************}
 
-  TactionType = (atGoToXY, atSwivelServo, atRotateAndGo, atGoToWarehouse, atFollowArc, atStop, atWait, atCheck, atConfirm);
+  TactionType = (atGoToXY, atSwivelServo, atRotateAndGo, atGoToWarehouse, atFollowArc, atStop, atWait, atCheck, atConfirm, atStabilize);
 
   Taction = record
     atype      : TactionType;
@@ -44,7 +44,7 @@ type
 
     {*************** Parts  ********************}
 
-  TPartType = (A, B, C, D);
+  TPartType = (R, G, B, N);
 
 
   TPart = record

@@ -11,16 +11,16 @@ LazarusResources.Add('TFLaserLoc','FORMDATA',[
   +'obotYSet.Text;EditSendLockIP.Text;EditStepScale.Text;Height;Left;PageContro'
   +'l.ActivePage;RGLasers.ItemIndex;Top;Width'#10'LCLVersion'#6#7'1.2.6.0'#0#12
   +'TPageControl'#11'PageControl'#4'Left'#2#0#6'Height'#3#127#1#3'Top'#2'q'#5'W'
-  +'idth'#3'['#2#10'ActivePage'#7#8'TabLaser'#5'Align'#7#8'alBottom'#8'TabIndex'
-  +#2#0#8'TabOrder'#2#0#0#9'TTabSheet'#8'TabLaser'#7'Caption'#6#5'Laser'#12'Cli'
-  +'entHeight'#3'\'#1#11'ClientWidth'#3'U'#2#0#6'TChart'#5'Chart'#4'Left'#2#4#6
-  +'Height'#3'X'#1#3'Top'#2#10#5'Width'#3'H'#2#8'AxisList'#14#1#6'Minors'#14#0
-  +#27'Title.LabelFont.Orientation'#3#132#3#0#1#9'Alignment'#7#9'calBottom'#6'M'
-  +'inors'#14#0#0#0#16'Foot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6
-  +'clBlue'#17'Title.Brush.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6'clBlu'
-  +'e'#18'Title.Text.Strings'#1#6#7'TAChart'#0#7'Anchors'#11#5'akTop'#6'akLeft'
-  +#7'akRight'#8'akBottom'#0#11'ParentColor'#8#0#11'TLineSeries'#7'CSLaser'#0#0
-  +#0#0#9'TTabSheet'#10'TabLaserXY'#7'Caption'#6#7'LaserXY'#12'ClientHeight'#3
+  +'idth'#3'['#2#10'ActivePage'#7#11'TabSettings'#5'Align'#7#8'alBottom'#8'TabI'
+  +'ndex'#2#3#8'TabOrder'#2#0#0#9'TTabSheet'#8'TabLaser'#7'Caption'#6#5'Laser'
+  +#12'ClientHeight'#3'\'#1#11'ClientWidth'#3'U'#2#0#6'TChart'#5'Chart'#4'Left'
+  +#2#4#6'Height'#3'X'#1#3'Top'#2#10#5'Width'#3'H'#2#8'AxisList'#14#1#6'Minors'
+  +#14#0#27'Title.LabelFont.Orientation'#3#132#3#0#1#9'Alignment'#7#9'calBottom'
+  +#6'Minors'#14#0#0#0#16'Foot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7
+  +#6'clBlue'#17'Title.Brush.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6'clB'
+  +'lue'#18'Title.Text.Strings'#1#6#7'TAChart'#0#7'Anchors'#11#5'akTop'#6'akLef'
+  +'t'#7'akRight'#8'akBottom'#0#11'ParentColor'#8#0#11'TLineSeries'#7'CSLaser'#0
+  +#0#0#0#9'TTabSheet'#10'TabLaserXY'#7'Caption'#6#7'LaserXY'#12'ClientHeight'#3
   +'\'#1#11'ClientWidth'#3'U'#2#0#6'TChart'#7'ChartXY'#4'Left'#2#4#6'Height'#3
   +'P'#1#3'Top'#2#10#5'Width'#3#224#1#8'AxisList'#14#1#6'Minors'#14#0#27'Title.'
   +'LabelFont.Orientation'#3#132#3#0#1#9'Alignment'#7#9'calBottom'#6'Minors'#14
@@ -105,9 +105,9 @@ LazarusResources.Add('TFLaserLoc','FORMDATA',[
   +'Size'#8#8'ReadOnly'#9#8'TabOrder'#2#5#0#0#7'TButton'#7'BOdoSet'#4'Left'#3
   +#254#1#6'Height'#2#25#3'Top'#2#8#5'Width'#2'K'#7'Anchors'#11#5'akTop'#7'akRi'
   +'ght'#0#7'Caption'#6#3'Set'#7'OnClick'#7#12'BOdoSetClick'#8'TabOrder'#2#6#0#0
-  +#0#0#9'TTabSheet'#9'TabRadial'#7'Caption'#6#6'Radial'#12'ClientHeight'#4#8#14
-  +#1#0#11'ClientWidth'#4#136'4'#1#0#0#9'TPaintBox'#8'PaintBox'#4'Left'#2#0#6'H'
-  +'eight'#3#168#1#3'Top'#2#26#5'Width'#3#248#1#0#0#9'TCheckBox'#10'CBShowSize'
+  +#0#0#9'TTabSheet'#9'TabRadial'#7'Caption'#6#6'Radial'#12'ClientHeight'#4#216
+  +#19#1#0#11'ClientWidth'#4#153';'#1#0#0#9'TPaintBox'#8'PaintBox'#4'Left'#2#0#6
+  +'Height'#3#168#1#3'Top'#2#26#5'Width'#3#248#1#0#0#9'TCheckBox'#10'CBShowSize'
   +#4'Left'#2#4#6'Height'#2#19#3'Top'#2#6#5'Width'#2'H'#7'Caption'#6#9'Show Siz'
   +'e'#8'TabOrder'#2#0#0#0#0#6'TLabel'#6'Label1'#4'Left'#2#8#6'Height'#2#17#3'T'
   +'op'#2#8#5'Width'#2'3'#7'Caption'#6#8'Robot x:'#11'ParentColor'#8#0#0#5'TEdi'
@@ -143,12 +143,12 @@ LazarusResources.Add('TFLaserLoc','FORMDATA',[
   +'ParentColor'#8#0#0#5'TEdit'#12'EditFitError'#4'Left'#2'L'#6'Height'#2#27#3
   +'Top'#2'P'#5'Width'#2'8'#8'AutoSize'#8#8'TabOrder'#2#11#4'Text'#6#1'0'#0#0#14
   +'TLUDPComponent'#3'UDP'#4'Port'#3#148'&'#9'OnReceive'#7#10'UDPReceive'#7'Tim'
-  +'eout'#2#0#4'left'#3#248#1#3'top'#2#16#0#0#15'TIniPropStorage'#14'IniPropSto'
-  +'rage'#12'StoredValues'#14#0#11'IniFileName'#6#10'config.ini'#10'IniSection'
-  +#6#8'LaserLoc'#4'left'#3#223#1#3'top'#3#184#0#0#0#14'TLUDPComponent'#7'UDPSe'
-  +'nd'#4'Port'#2#0#7'Timeout'#2#0#4'left'#3#248#1#3'top'#2'L'#0#0#14'TLUDPComp'
-  +'onent'#6'UDPOdo'#4'Port'#3')#'#9'OnReceive'#7#13'UDPOdoReceive'#7'Timeout'#2
-  +#0#4'left'#3'('#2#3'top'#2#24#0#0#14'TLUDPComponent'#9'UDPCamera'#4'Port'#3
-  +'<#'#9'OnReceive'#7#16'UDPCameraReceive'#7'Timeout'#2#0#4'left'#3'('#2#3'top'
-  +#2'L'#0#0#0
+  +'eout'#2#0#4'left'#3#223#1#3'top'#3#240#0#0#0#15'TIniPropStorage'#14'IniProp'
+  +'Storage'#12'StoredValues'#14#0#11'IniFileName'#6#10'config.ini'#10'IniSecti'
+  +'on'#6#8'LaserLoc'#4'left'#3#223#1#3'top'#3#184#0#0#0#14'TLUDPComponent'#7'U'
+  +'DPSend'#4'Port'#2#0#7'Timeout'#2#0#4'left'#3#223#1#3'top'#3'`'#1#0#0#14'TLU'
+  +'DPComponent'#6'UDPOdo'#4'Port'#3')#'#9'OnReceive'#7#13'UDPOdoReceive'#7'OnE'
+  +'rror'#7#11'UDPOdoError'#7'Timeout'#2#0#4'left'#3#223#1#3'top'#3'('#1#0#0#14
+  +'TLUDPComponent'#9'UDPCamera'#4'Port'#3'<#'#9'OnReceive'#7#16'UDPCameraRecei'
+  +'ve'#7'Timeout'#2#0#4'left'#3#224#1#3'top'#3#152#1#0#0#0
 ]);

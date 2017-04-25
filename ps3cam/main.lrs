@@ -33,8 +33,8 @@ LazarusResources.Add('TFMain','FORMDATA',[
   +'_BGR24'#9'UseLibV4l'#9#7'OnFrame'#7#10'VideoFrame'#4'left'#2#8#3'top'#2' '#0
   +#0#13'TSdpoFastForm'#5'Image'#5'Width'#3'@'#1#6'Height'#3#240#0#6'TopPos'#2#0
   +#7'LeftPos'#2#0#8'Position'#7#6'poNone'#7'Caption'#6#5'Image'#9'ImageType'#7
-  +#8'itNormal'#11'AlwaysOnTop'#8#4'left'#3#224#0#3'top'#2' '#0#0#15'TIniPropSt'
-  +'orage'#14'IniPropStorage'#12'StoredValues'#14#0#10'IniSection'#6#4'Main'#4
-  +'left'#3#8#1#3'top'#2' '#0#0#14'TLUDPComponent'#6'UDPRob'#4'Port'#3'=#'#7'Ti'
-  +'meout'#2#0#4'left'#2'0'#3'top'#2' '#0#0#0
+  +#8'itNormal'#11'AlwaysOnTop'#8#4'left'#3#216#0#3'top'#3#144#0#0#0#15'TIniPro'
+  +'pStorage'#14'IniPropStorage'#12'StoredValues'#14#0#10'IniSection'#6#4'Main'
+  +#4'left'#3#24#1#3'top'#3#144#0#0#0#14'TLUDPComponent'#6'UDPRob'#4'Port'#3'=#'
+  +#7'Timeout'#2#0#4'left'#2'0'#3'top'#2' '#0#0#0
 ]);

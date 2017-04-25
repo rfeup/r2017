@@ -4,12 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="13">
+    <Units Count="14">
       <Unit0>
         <Filename Value="Rover5.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Rover5"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="32" Y="14"/>
@@ -23,7 +23,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="main"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="608"/>
@@ -49,7 +48,7 @@
         <Filename Value="motor.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="motor"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="60"/>
         <CursorPos X="16" Y="74"/>
@@ -140,6 +139,17 @@
         <CursorPos X="14" Y="331"/>
         <UsageCount Value="10"/>
       </Unit12>
+      <Unit13>
+        <Filename Value="..\HAL\state.pas"/>
+        <UnitName Value="state"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="176"/>
+        <CursorPos X="30" Y="178"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit13>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>

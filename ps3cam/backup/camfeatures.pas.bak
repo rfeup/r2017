@@ -26,6 +26,8 @@ type
     procedure BSaveClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure IniPropStorageRestoreProperties(Sender: TObject);
+    procedure IniPropStorageRestoringProperties(Sender: TObject);
     procedure SBFeatureValueChange(Sender: TObject);
     procedure SGVideoControlsSelectCell(Sender: TObject; aCol, aRow: Integer;
       var CanSelect: Boolean);
@@ -73,7 +75,7 @@ begin
     //SGVideoControls.Cells[2, i + 1] := inttostr(Video.UserControls[i].id - V4L2_CID_BASE);
     SGVideoControls.Cells[2, i + 1] := inttostr(Video.UserControls[i].minimum);
     SGVideoControls.Cells[3, i + 1] := inttostr(Video.UserControls[i].maximum);
-    SGVideoControls.Cells[3, i + 1] := inttostr(Video.UserControls[i].flags);
+    SGVideoControls.Cells[4, i + 1] := inttostr(Video.UserControls[i].flags);
   end;
 
   // Init the current selected feature
@@ -82,6 +84,10 @@ begin
   RefreshFeatures();
 
 end;
+
+
+
+
 
 
 procedure TFCamFeatures.BFeatureValueSetClick(Sender: TObject);
