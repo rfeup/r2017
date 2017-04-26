@@ -51,7 +51,6 @@ type
     StatusBar: TStatusBar;
     Video: TSdpoVideo4L2;
     procedure FormDestroy(Sender: TObject);
-    procedure IniPropStorageRestoringProperties(Sender: TObject);
     procedure SendCameraMessage(mtype: integer);
     procedure CBVideoActiveChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);

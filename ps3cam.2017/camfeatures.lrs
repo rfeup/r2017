@@ -1,0 +1,35 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFCamFeatures','FORMDATA',[
+  'TPF0'#13'TFCamFeatures'#12'FCamFeatures'#4'Left'#3#206#3#6'Height'#3#22#2#3
+  +'Top'#3#179#0#5'Width'#3#134#1#7'Caption'#6#15'Camera Features'#12'ClientHei'
+  +'ght'#3#22#2#11'ClientWidth'#3#134#1#8'OnCreate'#7#10'FormCreate'#6'OnShow'#7
+  +#8'FormShow'#17'SessionProperties'#6#21'Top;Left;Width;Height'#10'LCLVersion'
+  +#6#7'1.6.2.0'#0#11'TStringGrid'#15'SGVideoControls'#4'Left'#2#0#6'Height'#3
+  +#182#1#3'Top'#2'<'#5'Width'#3#170#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRig'
+  +'ht'#8'akBottom'#0#11'AutoAdvance'#7#6'aaNone'#7'Columns'#14#1#13'Title.Capt'
+  +'ion'#6#8'Property'#5'Width'#3#140#0#0#1#13'Title.Caption'#6#5'Value'#5'Widt'
+  +'h'#2'F'#0#1#13'Title.Caption'#6#3'Min'#5'Width'#2'F'#0#1#13'Title.Caption'#6
+  +#3'Max'#5'Width'#2'F'#0#1#13'Title.Caption'#6#5'Flags'#0#0#16'DefaultRowHeig'
+  +'ht'#2#20#9'FixedCols'#2#0#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzL'
+  +'ine'#10'goVertLine'#10'goHorzLine'#13'goRangeSelect'#11'goColSizing'#11'goR'
+  +'owSelect'#14'goSmoothScroll'#16'goFixedColSizing'#0#8'RowCount'#2#1#8'TabOr'
+  +'der'#2#0#12'OnSelectCell'#7#25'SGVideoControlsSelectCell'#9'ColWidths'#1#3
+  +#140#0#2'F'#2'F'#2'F'#2'@'#0#0#0#6'TLabel'#12'LabelFeature'#4'Left'#2#0#6'He'
+  +'ight'#2#17#3'Top'#2#8#5'Width'#2'.'#7'Caption'#6#8'Feature:'#11'ParentColor'
+  +#8#0#0#5'TEdit'#16'EditFeatureValue'#4'Left'#3#140#0#6'Height'#2#27#3'Top'#2
+  +#4#5'Width'#2'P'#8'AutoSize'#8#8'TabOrder'#2#1#4'Text'#6#1'0'#0#0#10'TScroll'
+  +'Bar'#14'SBFeatureValue'#4'Left'#2#4#6'Height'#2#15#3'Top'#2'$'#5'Width'#3'|'
+  +#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#11'LargeChange'#2#10#3'Max'
+  +#3#255#0#8'PageSize'#2#0#8'TabOrder'#2#2#8'OnChange'#7#20'SBFeatureValueChan'
+  +'ge'#0#0#7'TButton'#16'BFeatureValueSet'#4'Left'#3'8'#1#6'Height'#2#25#3'Top'
+  +#2#4#5'Width'#2'K'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#3'Set'#7
+  +'OnClick'#7#21'BFeatureValueSetClick'#8'TabOrder'#2#3#0#0#7'TButton'#5'BSave'
+  +#4'Left'#3'8'#1#6'Height'#2#25#3'Top'#3#248#1#5'Width'#2'K'#7'Anchors'#11#7
+  +'akRight'#8'akBottom'#0#7'Caption'#6#4'Save'#7'OnClick'#7#10'BSaveClick'#8'T'
+  +'abOrder'#2#4#0#0#7'TButton'#5'BLoad'#4'Left'#3#228#0#6'Height'#2#25#3'Top'#3
+  +#248#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'#6#4'L'
+  +'oad'#7'OnClick'#7#10'BLoadClick'#8'TabOrder'#2#5#0#0#15'TIniPropStorage'#14
+  +'IniPropStorage'#12'StoredValues'#14#0#10'IniSection'#6#11'CamFeatures'#4'le'
+  +'ft'#3#4#1#3'top'#2'<'#0#0#0
+]);

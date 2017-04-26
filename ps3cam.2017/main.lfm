@@ -1,0 +1,173 @@
+object FMain: TFMain
+  Left = 468
+  Height = 523
+  Top = 160
+  Width = 359
+  HorzScrollBar.Page = 261
+  VertScrollBar.Page = 32
+  ActiveControl = CBVideoActive
+  Caption = 'SdpoVideo4L2'
+  ClientHeight = 523
+  ClientWidth = 359
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  SessionProperties = 'EditDevice.Text;EditLineCount.Text;EditLine.Text;Image.LeftPos;Image.TopPos;CBChartActive.Checked'
+  LCLVersion = '1.2.6.0'
+  object CBVideoActive: TCheckBox
+    Left = 4
+    Height = 21
+    Top = 4
+    Width = 95
+    Caption = 'Video Active'
+    OnChange = CBVideoActiveChange
+    TabOrder = 0
+  end
+  object EditDevice: TEdit
+    Left = 118
+    Height = 27
+    Top = 4
+    Width = 140
+    AutoSize = False
+    AutoSelect = False
+    TabOrder = 1
+    Text = '/dev/video0'
+  end
+  object Memo: TMemo
+    Left = 0
+    Height = 200
+    Top = 64
+    Width = 361
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 2
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 21
+    Top = 502
+    Width = 359
+    Panels = <>
+  end
+  object Chart1: TChart
+    Left = 4
+    Height = 200
+    Top = 296
+    Width = 352
+    AxisList = <    
+      item
+        Minors = <>
+        Range.Max = 200
+        Range.UseMax = True
+        Range.UseMin = True
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+        Minors = <>
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+    object LineSeriesRED: TLineSeries
+      LinePen.Color = clRed
+    end
+    object LineSeriesBlue: TLineSeries
+      LinePen.Color = clBlue
+    end
+    object LineSeriesGreen: TLineSeries
+      LinePen.Color = clGreen
+    end
+  end
+  object EditLine: TEdit
+    Left = 118
+    Height = 27
+    Top = 32
+    Width = 50
+    AutoSize = False
+    TabOrder = 5
+    Text = '100'
+  end
+  object EditDebug: TEdit
+    Left = 232
+    Height = 27
+    Top = 32
+    Width = 112
+    AutoSize = False
+    TabOrder = 6
+    Text = 'EditRGB'
+  end
+  object EditLineCount: TEdit
+    Left = 168
+    Height = 27
+    Top = 32
+    Width = 50
+    AutoSize = False
+    TabOrder = 7
+    Text = '8'
+  end
+  object CBChartActive: TCheckBox
+    Left = 4
+    Height = 21
+    Top = 271
+    Width = 94
+    Caption = 'Chart Active'
+    TabOrder = 8
+  end
+  object EditMinTresh: TEdit
+    Left = 212
+    Height = 22
+    Top = 271
+    Width = 50
+    AutoSize = False
+    TabOrder = 9
+    Text = '8'
+  end
+  object Label1: TLabel
+    Left = 144
+    Height = 17
+    Top = 272
+    Width = 62
+    Caption = 'Min Tresh:'
+    ParentColor = False
+  end
+  object Video: TSdpoVideo4L2
+    Active = False
+    Width = 320
+    Height = 240
+    FrameRate = 30
+    BayerMode = False
+    PixelFormat = uvcpf_BGR24
+    UseLibV4l = True
+    OnFrame = VideoFrame
+    left = 40
+    top = 104
+  end
+  object IniPropStorage: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'Main'
+    left = 264
+    top = 32
+  end
+  object UDPRob: TLUDPComponent
+    Port = 9021
+    Timeout = 0
+    left = 80
+    top = 104
+  end
+  object Image: TSdpoFastForm
+    Width = 320
+    Height = 240
+    TopPos = 0
+    LeftPos = 0
+    Position = poSelectable
+    ImageType = itNormal
+    AlwaysOnTop = False
+    left = 76
+    top = 156
+  end
+end

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1397985295"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -vewnhi -Fl/opt/gnome/lib -Fu/usr/share/lazarus/1.2.6/components/tachart/lib/i386-linux/gtk2 -Fu/usr/share/lazarus/1.2.6/components/lnet/lazaruspackage/lib/i386-linux -Fu/usr/share/lazarus/1.2.6/components/ideintf/units/i386-linux/gtk2 -Fu/usr/share/lazarus/1.2.6/components/Sdpo/SdpoVideo4L2/lib/i386-linux -Fu/usr/share/lazarus/1.2.6/components/Sdpo/SdpoFastForm/lib/i386-linux -Fu/usr/share/lazarus/1.2.6/components/lazcontrols/lib/i386-linux/gtk2 -Fu/usr/share/lazarus/1.2.6/lcl/units/i386-linux/gtk2 -Fu/usr/share/lazarus/1.2.6/lcl/units/i386-linux -Fu/usr/share/lazarus/1.2.6/components/lazutils/lib/i386-linux -Fu/usr/share/lazarus/1.2.6/packager/units/i386-linux -Fu/home/dpo/Desktop/R@F_2017_v3/ps3cam.2017/ -l -dUseCThreads -dLCL -dLCLgtk2 ps3cam.lpr"/>
+</CONFIG>

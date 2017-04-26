@@ -41,30 +41,30 @@ end;
 
 procedure PathSelectionMission2();
 begin
-  if PartsScript[2].PartType = G then begin  {G | G | B | B | B}
-    path_2[0, 0] := 0; path_2[0, 1] := 14;
+  if PartsScript[2].PartType = G then begin  {B | G | B | B | G}   //2.35
+    path_2[0, 0] := 0; path_2[0, 1] := 9;
     path_2[1, 0] := 1; path_2[1, 1] := 16;
-    path_2[2, 0] := 2; path_2[2, 1] := 5;
-    path_2[3, 0] := 3; path_2[3, 1] := 6;
-    path_2[4, 0] := 4; path_2[4, 1] := 7;
-    path_2[5, 0] := 14; path_2[5, 1] := 8;
-    path_2[6, 0] := 16; path_2[6, 1] := 9;
-  end else if PartsScript[3].PartType = G then begin {G | B | G | B | B}
-    path_2[0, 0] := 0; path_2[0, 1] := 14;
+    path_2[2, 0] := 4; path_2[2, 1] := 14;
+    path_2[3, 0] := 2; path_2[3, 1] := 8;
+    path_2[4, 0] := 3; path_2[4, 1] := 7;
+    path_2[5, 0] := 16; path_2[5, 1] := 6;
+    path_2[6, 0] := 14; path_2[6, 1] := 5;
+  end else if PartsScript[3].PartType = G then begin {B | B | G | B | G}   //2.22
+    path_2[0, 0] := 0; path_2[0, 1] := 9;
     path_2[1, 0] := 2; path_2[1, 1] := 16;
-    path_2[2, 0] := 1; path_2[2, 1] := 5;
-    path_2[3, 0] := 3; path_2[3, 1] := 6;
-    path_2[4, 0] := 4; path_2[4, 1] := 7;
-    path_2[5, 0] := 14; path_2[5, 1] := 8;
-    path_2[6, 0] := 16; path_2[6, 1] := 9;
-  end else if PartsScript[4].PartType = G then begin {G | B | B | G | B}
-    path_2[0, 0] := 0; path_2[0, 1] := 14;
+    path_2[2, 0] := 4; path_2[2, 1] := 14;
+    path_2[3, 0] := 1; path_2[3, 1] := 8;
+    path_2[4, 0] := 3; path_2[4, 1] := 7;
+    path_2[5, 0] := 16; path_2[5, 1] := 6;
+    path_2[6, 0] := 14; path_2[6, 1] := 5;
+  end else if PartsScript[4].PartType = G then begin {B | B | B | G | G}   //2.11
+    path_2[0, 0] := 0; path_2[0, 1] := 9;
     path_2[1, 0] := 3; path_2[1, 1] := 16;
-    path_2[2, 0] := 1; path_2[2, 1] := 5;
-    path_2[3, 0] := 2; path_2[3, 1] := 6;
-    path_2[4, 0] := 4; path_2[4, 1] := 7;
-    path_2[5, 0] := 14; path_2[5, 1] := 8;
-    path_2[6, 0] := 16; path_2[6, 1] := 9;
+    path_2[2, 0] := 4; path_2[2, 1] := 14;
+    path_2[3, 0] := 1; path_2[3, 1] := 8;
+    path_2[4, 0] := 2; path_2[4, 1] := 7;
+    path_2[5, 0] := 16; path_2[5, 1] := 6;
+    path_2[6, 0] := 14; path_2[6, 1] := 5;
   end else begin
     rebuild := 1;
   end;
@@ -73,143 +73,145 @@ end;
 
 procedure PathSelectionMission3();
 begin
- (* if (PartsScript[2].) and (PartsScript[5].PartType = R) then begin  {B | B | G | G | R}          *)
-  if (PartsScript[2].PartType = B) and (PartsScript[1].PartType = R) then begin  {R | B | G | G | B}
-    path_3[0, 0] := 2; path_3[0, 1] := 14;
-    path_3[1, 0] := 0; path_3[1, 1] := 11;
-    path_3[2, 0] := 3; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 1; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
-  end else if (PartsScript[3].PartType = B) and (PartsScript[1].PartType = R) then begin  {B | G | B | G | R}     {R | G | B | G | B}
-    path_3[0, 0] := 1; path_3[0, 1] := 14;
-    path_3[1, 0] := 0; path_3[1, 1] := 11;
-    path_3[2, 0] := 3; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 2; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
-  end else if (PartsScript[4].PartType = B) and (PartsScript[1].PartType = R) then begin  {B | G | G | B | R}     {R | G | G | B | B}
-    path_3[0, 0] := 1; path_3[0, 1] := 14;
-    path_3[1, 0] := 0; path_3[1, 1] := 11;
-    path_3[2, 0] := 2; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 3; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
 
-      (*Pensar Nisto!*)
+  if (PartsScript[2].PartType = B) and (PartsScript[5].PartType = R) then begin  {B | B | G | G | R}      //2.42
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 2; path_3[1, 1] := 14;
+    path_3[2, 0] := 4; path_3[2, 1] := 11;
+    path_3[3, 0] := 3; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 1; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
-  end else if (PartsScript[1].PartType = B) and (PartsScript[4].PartType = R) then begin  {B | G | G | R | B}
-    path_3[0, 0] := 1; path_3[0, 1] := 14;
-    path_3[1, 0] := 3; path_3[1, 1] := 11;
-    path_3[2, 0] := 2; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 0; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
+  end else if (PartsScript[2].PartType = B) and (PartsScript[4].PartType = R) then begin  {B | B | G | R | G}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 2; path_3[1, 1] := 14;
+    path_3[2, 0] := 3; path_3[2, 1] := 11;
+    path_3[3, 0] := 4; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 1; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
-  end else if (PartsScript[3].PartType = B) and (PartsScript[4].PartType = R) then begin  {B | G | B | R | G}            {G | G | B | R | B}
-    path_3[0, 0] := 0; path_3[0, 1] := 14;
-    path_3[1, 0] := 3; path_3[1, 1] := 11;
-    path_3[2, 0] := 1; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 2; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
+  end else if (PartsScript[2].PartType = B) and (PartsScript[3].PartType = R) then begin  {B | B | R | G | G}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 3; path_3[1, 1] := 14;
+    path_3[2, 0] := 2; path_3[2, 1] := 11;
+    path_3[3, 0] := 4; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 1; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
-  end else if (PartsScript[2].PartType = B) and (PartsScript[4].PartType = R) then begin  {B | B | G | R | G}          {G | B | G | R | B}
-    path_3[0, 0] := 0; path_3[0, 1] := 14;
-    path_3[1, 0] := 3; path_3[1, 1] := 11;
-    path_3[2, 0] := 2; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 1; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
+  end else if (PartsScript[5].PartType = B) and (PartsScript[4].PartType = R) then begin  {B | G | G | R | B}   //   20539
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 1; path_3[1, 1] := 14;
+    path_3[2, 0] := 3; path_3[2, 1] := 11;
+    path_3[3, 0] := 2; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 4; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
+  end else if (PartsScript[4].PartType = B) and (PartsScript[5].PartType = R) then begin  {B | G | G | B | R}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 1; path_3[1, 1] := 14;
+    path_3[2, 0] := 4; path_3[2, 1] := 11;
+    path_3[3, 0] := 2; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 3; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
-  end else if (PartsScript[4].PartType = B) and (PartsScript[3].PartType = R) then begin  {B | G | R | B | G}          {G | G | R | B | B}
-    path_3[0, 0] := 0; path_3[0, 1] := 14;
-    path_3[1, 0] := 2; path_3[1, 1] := 11;
-    path_3[2, 0] := 1; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 3; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
-
-  end else if (PartsScript[1].PartType = B) and (PartsScript[3].PartType = R) then begin  {B | G | R | G | B}
-    path_3[0, 0] := 1; path_3[0, 1] := 14;
-    path_3[1, 0] := 2; path_3[1, 1] := 11;
-    path_3[2, 0] := 3; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 0; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
-
-  end else if (PartsScript[2].PartType = B) and (PartsScript[3].PartType = R) then begin  {B | B | R | G | G}            {G | B | R | G | B}
-    path_3[0, 0] := 0; path_3[0, 1] := 14;
-    path_3[1, 0] := 2; path_3[1, 1] := 11;
-    path_3[2, 0] := 3; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 1; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
+  end else if (PartsScript[4].PartType = B) and (PartsScript[3].PartType = R) then begin  {B | G | R | B | G}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 1; path_3[1, 1] := 14;
+    path_3[2, 0] := 2; path_3[2, 1] := 11;
+    path_3[3, 0] := 4; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 3; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
 
+  end else if (PartsScript[5].PartType = B) and (PartsScript[3].PartType = R) then begin  {B | G | R | G | B}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 1; path_3[1, 1] := 14;
+    path_3[2, 0] := 2; path_3[2, 1] := 11;
+    path_3[3, 0] := 3; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 4; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
-  end else if (PartsScript[1].PartType = B) and (PartsScript[2].PartType = R) then begin  {B | R | G | G | B}
-    path_3[0, 0] := 2; path_3[0, 1] := 14;
-    path_3[1, 0] := 1; path_3[1, 1] := 11;
-    path_3[2, 0] := 3; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 0; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
+  end else if (PartsScript[3].PartType = B) and (PartsScript[4].PartType = R) then begin  {B | G | B | R | G}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 1; path_3[1, 1] := 14;
+    path_3[2, 0] := 3; path_3[2, 1] := 11;
+    path_3[3, 0] := 4; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 2; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
-  end else if (PartsScript[4].PartType = B) and (PartsScript[2].PartType = R) then begin  {B | R | G | B | G}     {G | R | G | B | B}
-    path_3[0, 0] := 0; path_3[0, 1] := 14;
-    path_3[1, 0] := 1; path_3[1, 1] := 11;
-    path_3[2, 0] := 2; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 3; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
+  end else if (PartsScript[3].PartType = B) and (PartsScript[5].PartType = R) then begin  {B | G | B | G | R}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 1; path_3[1, 1] := 14;
+    path_3[2, 0] := 4; path_3[2, 1] := 11;
+    path_3[3, 0] := 3; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 2; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
 
-  end else if (PartsScript[3].PartType = B) and (PartsScript[2].PartType = R) then begin  {B | R | B | G | G}        {G | R | B | G | B}
-    path_3[0, 0] := 0; path_3[0, 1] := 14;
-    path_3[1, 0] := 1; path_3[1, 1] := 11;
-    path_3[2, 0] := 3; path_3[2, 1] := 16;
-    path_3[3, 0] := 14; path_3[3, 1] := 5;
-    path_3[4, 0] := 11; path_3[4, 1] := 14;
-    path_3[5, 0] := 2; path_3[5, 1] := 6;
-    path_3[6, 0] := 4; path_3[6, 1] := 7;
-    path_3[7, 0] := 16; path_3[7, 1] := 8;
-    path_3[8, 0] := 14; path_3[8, 1] := 9;
+
+
+  end else if (PartsScript[3].PartType = B) and (PartsScript[2].PartType = R) then begin  {B | R | B | G | G}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 3; path_3[1, 1] := 14;
+    path_3[2, 0] := 1; path_3[2, 1] := 11;
+    path_3[3, 0] := 4; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 2; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
+
+  end else if (PartsScript[4].PartType = B) and (PartsScript[2].PartType = R) then begin  {B | R | G | B | G}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 2; path_3[1, 1] := 14;
+    path_3[2, 0] := 1; path_3[2, 1] := 11;
+    path_3[3, 0] := 4; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 3; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
+
+  end else if (PartsScript[5].PartType = B) and (PartsScript[2].PartType = R) then begin  {B | R | G | G | B}
+    path_3[0, 0] := 0; path_3[0, 1] := 9;
+    path_3[1, 0] := 3; path_3[1, 1] := 14;
+    path_3[2, 0] := 1; path_3[2, 1] := 11;
+    path_3[3, 0] := 2; path_3[3, 1] := 16;
+    path_3[4, 0] := 14; path_3[4, 1] := 8;
+    path_3[5, 0] := 11; path_3[5, 1] := 14;
+    path_3[6, 0] := 4; path_3[6, 1] := 5;
+    path_3[7, 0] := 16; path_3[7, 1] := 6;
+    path_3[8, 0] := 14; path_3[8, 1] := 7;
+  end else begin
+      rebuild := 1;
+    end
   end;
-end;
 
 procedure UDPCameraReceivePart(MessaC:String);
     var i: integer;
@@ -234,13 +236,11 @@ procedure UDPCameraReceivePart(MessaC:String);
   PartsScript2[5].ID:= 5;
   PartsScript2[5].Node:= BoxPlaces[4];
 
-  if (ve <> 5)    then
+
      FHal.ChangePartColor(PartsScript2);
 
-      {Memo2.Lines.Add( '1: ' + MsgMachineState[1] + ' 2: ' +MsgMachineState[2] + ' 3: '+ MsgMachineState[3] + ' 4: ' + MsgMachineState[4] + ' 5: ' + MsgMachineState[5]);
-      BPartSetClick(Self);         //Importa as caracteristicas das Máquinas: duração, origem e fim de peça
-       }
-      end;
+
+   end;
 
 end.
 

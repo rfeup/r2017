@@ -877,6 +877,7 @@ begin
             last_drop := path_3[i,1];
            end;
            asAddStop;
+                 FHal.EMission.Text:='PSM3_asaddstop';
           end;
   end;
 end;
@@ -887,7 +888,6 @@ end;
 
 procedure BuildStateMachine(safe, test: boolean);
 var machine_approach_x, advance: double;
-    dspeed, aspeed, pradius : double;
     waitForBoxes: integer;
     n1, n2, n3: TBoxPlace;
 begin
@@ -900,12 +900,9 @@ begin
     machine_approach_x := 0.0;
   end else if test then begin
     // test parameters
-    //dspeed := StrToFloat(FHal.EDefaultSpeed.Text);
-    aspeed := StrToFloat(FHal.EApproachSpeed.Text);
-    pradius := StrToFloat(FHal.EPathRadius.Text);
     defaultSpeed := StrToFloat(FHal.EDefaultSpeed.Text);
-    warehouseApproachSpeed := aspeed;
-    pathRadius := pradius;
+    warehouseApproachSpeed := StrToFloat(FHal.EApproachSpeed.Text);
+    pathRadius := StrToFloat(FHal.EPathRadius.Text);
     machine_approach_x := 0.1;
   end else begin
     // unsafe parameters
@@ -1041,14 +1038,15 @@ begin
     Inc(ActionScriptCount);
 
     n1 := BoxPlaces[4];
-    n2 := BoxPlaces[0];
+    n2 := BoxPlaces[4];
 
     count := 0;
     count2 := 0;
+
     asAddGotoXY(n2.x, n2.y, rad(n2.teta), ATan2(n2.y-n1.y,n2.x-n1.x), 0.2);
 
-    n1 := BoxPlaces[0];
-    n2 := BoxPlaces[18];
+    n1 := BoxPlaces[4];
+    n2 := BoxPlaces[4];
 
     asAddGotoXY(n2.x, 0, rad(n2.teta), ATan2(0,n2.x-n1.x), defaultSpeed);
 

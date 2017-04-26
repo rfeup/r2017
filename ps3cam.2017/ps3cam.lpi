@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <Flags>
+        <LRSInOutputDirectory Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <Title Value="ps3cam"/>
+    </General>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="5">
+      <Item1>
+        <PackageName Value="lnetvisual"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="SdpoVideo4L2Laz"/>
+        <MinVersion Minor="1" Release="1" Valid="True"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="SdpoFastFormLaz"/>
+        <MinVersion Minor="1" Release="4" Valid="True"/>
+      </Item5>
+    </RequiredPackages>
+    <Units Count="22">
+      <Unit0>
+        <Filename Value="ps3cam.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="1"/>
+        <CursorPos X="12" Y="13"/>
+        <UsageCount Value="152"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="294"/>
+        <CursorPos X="29" Y="321"/>
+        <UsageCount Value="152"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="../sdpovideo4l2.pas"/>
+        <UnitName Value="SdpoVideo4L2"/>
+        <TopLine Value="239"/>
+        <CursorPos X="52" Y="271"/>
+        <UsageCount Value="7"/>
+        <Bookmarks Count="3">
+          <Item0 X="1" Y="249" ID="0"/>
+          <Item1 X="25" Y="122" ID="1"/>
+          <Item2 X="1" Y="249" ID="8"/>
+        </Bookmarks>
+      </Unit2>
+      <Unit3>
+        <Filename Value="../videodev2.pas"/>
+        <TopLine Value="1436"/>
+        <CursorPos X="6" Y="1457"/>
+        <UsageCount Value="7"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="/share/fpcsrc/2.4.2/rtl/unix/baseunix.pp"/>
+        <UnitName Value="BaseUnix"/>
+        <CursorPos X="8" Y="32"/>
+        <UsageCount Value="3"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="/share/fpcsrc/2.4.2/rtl/linux/errno.inc"/>
+        <TopLine Value="143"/>
+        <CursorPos X="13" Y="177"/>
+        <UsageCount Value="3"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/usr/share/lazarus/1.0.12/components/Sdpo/SdpoVideo4L2/sdpovideo4l2.pas"/>
+        <UnitName Value="SdpoVideo4L2"/>
+        <TopLine Value="104"/>
+        <CursorPos X="83" Y="115"/>
+        <UsageCount Value="27"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="/usr/share/lazarus/1.0.12/components/Sdpo/SdpoVideo4L2/videodev2.pas"/>
+        <TopLine Value="1426"/>
+        <CursorPos Y="1450"/>
+        <UsageCount Value="27"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="camfeatures.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCamFeatures"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="camfeatures"/>
+        <IsVisibleTab Value="True"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="48"/>
+        <CursorPos X="95" Y="82"/>
+        <UsageCount Value="120"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="/usr/share/lazarus/1.0.12/components/Sdpo/SdpoFastForm/sdpofastformlinux.inc"/>
+        <TopLine Value="524"/>
+        <CursorPos Y="545"/>
+        <UsageCount Value="3"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="/usr/share/lazarus/1.2.2/components/Sdpo/SdpoVideo4L2/sdpovideo4l2.pas"/>
+        <UnitName Value="SdpoVideo4L2"/>
+        <TopLine Value="128"/>
+        <CursorPos Y="139"/>
+        <UsageCount Value="9"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="/usr/share/lazarus/1.2.2/components/Sdpo/SdpoFastForm/sdpofastformlinux.inc"/>
+        <TopLine Value="532"/>
+        <CursorPos Y="545"/>
+        <UsageCount Value="5"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="quicksort.pas"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="9"/>
+        <CursorPos X="11" Y="25"/>
+        <UsageCount Value="76"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="/usr/share/lazarus/1.2.6/components/Sdpo/SdpoVideo4L2/sdpovideo4l2.pas"/>
+        <UnitName Value="SdpoVideo4L2"/>
+        <TopLine Value="511"/>
+        <CursorPos Y="528"/>
+        <UsageCount Value="9"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="/usr/share/lazarus/1.2.6/lcl/interfaces/gtk2/gtk2widgetset.inc"/>
+        <TopLine Value="2315"/>
+        <CursorPos Y="2330"/>
+        <UsageCount Value="9"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="rlan.pas"/>
+        <UnitName Value="RLan"/>
+        <CursorPos X="31" Y="45"/>
+        <UsageCount Value="8"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="utils.pas"/>
+        <CursorPos X="14" Y="6"/>
+        <UsageCount Value="8"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="/usr/share/lazarus/1.2.4/components/Sdpo/SdpoFastForm/sdpofastformlinux.inc"/>
+        <TopLine Value="839"/>
+        <CursorPos X="16" Y="839"/>
+        <UsageCount Value="10"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="main.lfm"/>
+        <TopLine Value="95"/>
+        <CursorPos X="6" Y="121"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="/usr/share/lazarus/1.6.2/lcl/stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <TopLine Value="1228"/>
+        <CursorPos X="7" Y="1255"/>
+        <UsageCount Value="10"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="/usr/share/lazarus/1.6.2/lcl/include/buttoncontrol.inc"/>
+        <TopLine Value="34"/>
+        <CursorPos X="3" Y="36"/>
+        <UsageCount Value="10"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="/usr/share/lazarus/1.6.2/lcl/include/customcheckbox.inc"/>
+        <TopLine Value="124"/>
+        <CursorPos X="3" Y="133"/>
+        <UsageCount Value="10"/>
+      </Unit21>
+    </Units>
+    <JumpHistory Count="0" HistoryIndex="-1"/>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsGlobal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="../../rob2008/final/MDecOmni3/Tactic.pas"/>
+        <Line Value="914"/>
+      </Item1>
+    </BreakPoints>
+    <Watches Count="8">
+      <Item1>
+        <Expression Value="pimage"/>
+      </Item1>
+      <Item2>
+        <Expression Value="srcpix"/>
+      </Item2>
+      <Item3>
+        <Expression Value="xini"/>
+      </Item3>
+      <Item4>
+        <Expression Value="LimitsFilter[0]"/>
+      </Item4>
+      <Item5>
+        <Expression Value="idx"/>
+      </Item5>
+      <Item6>
+        <Expression Value="actLimFiltSize"/>
+      </Item6>
+      <Item7>
+        <Expression Value="ix"/>
+      </Item7>
+      <Item8>
+        <Expression Value="min_index"/>
+      </Item8>
+    </Watches>
+    <Exceptions Count="2">
+      <Item1>
+        <Name Value="ECodetoolError"/>
+      </Item1>
+      <Item2>
+        <Name Value="EFOpenError"/>
+      </Item2>
+    </Exceptions>
+  </Debugging>
+  <EditorMacros Count="0"/>
+</CONFIG>

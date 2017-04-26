@@ -1,7 +1,7 @@
 object FHal: TFHal
-  Left = 778
+  Left = 359
   Height = 700
-  Top = 119
+  Top = 159
   Width = 1071
   Caption = 'HAL'
   ClientHeight = 700
@@ -988,6 +988,14 @@ object FHal: TFHal
       )
       TabOrder = 3
     end
+  end
+  object EMission: TEdit
+    Left = 503
+    Height = 27
+    Top = 262
+    Width = 80
+    TabOrder = 10
+    Text = 'EMission'
   end
   object IniPropStorage: TIniPropStorage
     StoredValues = <>

@@ -877,6 +877,7 @@ begin
             last_drop := path_3[i,1];
            end;
            asAddStop;
+                 FHal.EMission.Text:='PSM3_asaddstop';
           end;
   end;
 end;
@@ -1041,6 +1042,7 @@ begin
 
     count := 0;
     count2 := 0;
+
     asAddGotoXY(n2.x, n2.y, rad(n2.teta), ATan2(n2.y-n1.y,n2.x-n1.x), 0.2);
 
     n1 := BoxPlaces[0];
